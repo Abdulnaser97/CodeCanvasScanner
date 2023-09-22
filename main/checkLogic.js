@@ -1,8 +1,14 @@
 const { Octokit } = require("@octokit/rest");
+const fs = require("fs");
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
-const prNumber = process.env.GITHUB_EVENT_PATH.number;
+
+// Read event payload
+const eventPayload = JSON.parse(
+  fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8")
+);
+const prNumber = eventPayload.number;
 
 async function handlePullRequestChange() {
   const { data: files } = await octokit.rest.pulls.listFiles({
