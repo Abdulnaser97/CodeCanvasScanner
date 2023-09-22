@@ -68,18 +68,4 @@ async function handlePullRequestChange() {
   });
 }
 
-context.octokit.rest.checks.create({
-  owner,
-  repo,
-  name: "Your Check Name",
-  head_sha: pull_request.head.sha, // The SHA of the commit to be checked
-  status: "completed",
-  conclusion: "success", // or 'failure', based on your conditions
-  output: {
-    title: title,
-    summary: summary,
-    text: feedback, // optional
-  },
-});
-
 handlePullRequestChange().catch((err) => console.error(err));
