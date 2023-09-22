@@ -34,12 +34,12 @@ async function handlePullRequestChange() {
   const action_required = feedback.files.length > 0;
   const conclusion = action_required ? "action_required" : "success";
   const title = action_required
-    ? feedback.files.length + " files need update on CodeGram"
+    ? feedback.files.length + " files need update on CodeCanvas"
     : "No issues found";
   let summary = "";
 
   if (action_required) {
-    summary += "### " + "The following files need update on CodeGram" + "\n";
+    summary += "### " + "The following files need update on CodeCanvas" + "\n";
     for (const issue of feedback.files) {
       summary += "**File:** " + issue + "," + "\n";
     }
@@ -51,11 +51,13 @@ async function handlePullRequestChange() {
   console.log("title: ", title);
   console.log("summary: ", summary);
   console.log("feedback: ", feedback.files.join(" "));
+  console.log("conclusion: ", conclusion);
+  console.log("sha: ", sha);
 
   await octokit.rest.checks.create({
     owner,
     repo,
-    name: "CodeGram Scanner",
+    name: "CodeCanvas Scanner",
     head_sha: sha,
     status: "completed",
     conclusion: conclusion,
