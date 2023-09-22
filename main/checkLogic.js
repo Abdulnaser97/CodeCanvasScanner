@@ -47,6 +47,9 @@ async function handlePullRequestChange() {
       "/"
     ).pop()}&sha=${process.env.GITHUB_SHA})`;
   }
+  console.log("title: ", title);
+  console.log("summary: ", summary);
+  console.log("feedback: ", feedback.files.join(" "));
 
   await octokit.rest.checks.create({
     owner,
