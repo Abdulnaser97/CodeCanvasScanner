@@ -9,6 +9,7 @@ const eventPayload = JSON.parse(
   fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8")
 );
 const prNumber = eventPayload.number;
+const sha = eventPayload.pull_request.head.sha;
 
 async function handlePullRequestChange() {
   const { data: files } = await octokit.rest.pulls.listFiles({
@@ -45,7 +46,7 @@ async function handlePullRequestChange() {
 
     summary += `\n\n ## [Click Here to Update Diagram](http://localhost:3001?pr=${prNumber}&repo=${repo}&branch=${process.env.GITHUB_REF.split(
       "/"
-    ).pop()}&sha=${process.env.GITHUB_SHA})`;
+    ).pop()}&sha=${sha})`;
   }
   console.log("title: ", title);
   console.log("summary: ", summary);
@@ -55,7 +56,7 @@ async function handlePullRequestChange() {
     owner,
     repo,
     name: "CodeGram Scanner",
-    head_sha: process.env.GITHUB_SHA,
+    head_sha: sha,
     status: "completed",
     conclusion: conclusion,
     completed_at: new Date().toISOString(),
@@ -66,5 +67,19 @@ async function handlePullRequestChange() {
     },
   });
 }
+
+context.octokit.rest.checks.create({
+  owner,
+  repo,
+  name: "Your Check Name",
+  head_sha: pull_request.head.sha, // The SHA of the commit to be checked
+  status: "completed",
+  conclusion: "success", // or 'failure', based on your conditions
+  output: {
+    title: title,
+    summary: summary,
+    text: feedback, // optional
+  },
+});
 
 handlePullRequestChange().catch((err) => console.error(err));
