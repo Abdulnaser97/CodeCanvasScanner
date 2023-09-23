@@ -12,38 +12,57 @@ const prNumber = eventPayload.number;
 const sha = eventPayload.pull_request.head.sha;
 
 async function handlePullRequestChange() {
-  let feedback = { files: [], lines: [] };
-
-  // Fetch tree of the root level of the branch to get a list of all files
+  // Get file list from the PR's branch
   const { data: tree } = await octokit.rest.git.getTree({
     owner,
     repo,
     tree_sha: sha,
+    recursive: "1",
   });
-  console.log("tree: ", tree);
-  // Find a file with the .CodeCanvas extension from the tree
-  const codeCanvasFile = tree.tree.find(
-    (item) => item.path.endsWith(".CodeCanvas") && item.type === "blob"
+
+  const codeCanvasFile = tree.tree.find((file) =>
+    file.path.endsWith(".CodeCanvas")
   );
 
-  console.log("codeCanvasFile: ", codeCanvasFile);
-  let codeCanvasContent;
-  if (codeCanvasFile) {
-    try {
-      const { data } = await octokit.rest.repos.getContent({
-        owner,
-        repo,
-        path: codeCanvasFile.path,
-        ref: sha,
-      });
-      const contentBuffer = Buffer.from(data.content, "base64");
-      codeCanvasContent = JSON.parse(contentBuffer.toString("utf8"));
-      console.log("Parsed .CodeCanvas content:", codeCanvasContent);
-    } catch (error) {
-      throw error;
+  let feedback = { files: [] };
+
+  if (!codeCanvasFile) {
+    console.log("no CodeCanvas file found in root");
+    return;
+  }
+
+  // Retrieve the file content
+  const { data: fileContent } = await octokit.rest.git.getBlob({
+    owner,
+    repo,
+    file_sha: codeCanvasFile.sha,
+  });
+
+  const codeCanvasJson = JSON.parse(
+    Buffer.from(fileContent.content, "base64").toString("utf8")
+  );
+
+  const repoData = codeCanvasJson.repoData;
+
+  // Get list of changed files in PR
+  const { data: filesChanged } = await octokit.rest.pulls.listFiles({
+    owner,
+    repo,
+    pull_number: prNumber,
+  });
+
+  const changedFiles = filesChanged.map((file) => file.filename);
+  console.log("changedFiles: ", changedFiles);
+  for (const entry of Object.values(repoData)) {
+    // Exclude line-of-code entries
+    for (const file of changedFiles) {
+      if (entry.path.includes(file) && entry?.cellId) {
+        feedback.files.push({
+          path: entry.path,
+          cellId: entry.cellId,
+        });
+      }
     }
-  } else {
-    console.log("No file with .CodeCanvas extension found in the root level.");
   }
 
   const action_required = feedback.files.length > 0;
@@ -54,9 +73,12 @@ async function handlePullRequestChange() {
   let summary = "";
 
   if (action_required) {
-    summary += "### " + "The following files need update on CodeCanvas" + "\n";
+    summary +=
+      "### " +
+      "The following entries in repoData are impacted by the PR:" +
+      "\n";
     for (const issue of feedback.files) {
-      summary += "**File:** " + issue + "," + "\n";
+      summary += "**Entry:** " + issue.path + "," + "\n";
     }
 
     summary += `\n\n ## [Click Here to Update Diagram](http://localhost:3001?pr=${prNumber}&repo=${repo}&branch=${process.env.GITHUB_REF.split(
@@ -65,7 +87,7 @@ async function handlePullRequestChange() {
   }
   console.log("title: ", title);
   console.log("summary: ", summary);
-  console.log("feedback: ", feedback.files.join(" "));
+  console.log("feedback: ", JSON.stringify(feedback));
   console.log("conclusion: ", conclusion);
   console.log("sha: ", sha);
 
@@ -80,7 +102,7 @@ async function handlePullRequestChange() {
     output: {
       title: title,
       summary: summary,
-      text: feedback.files.join(" "),
+      text: JSON.stringify(feedback),
     },
   });
 }
