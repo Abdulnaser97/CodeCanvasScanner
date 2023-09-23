@@ -1,7 +1,7 @@
-const { GitHub, context } = require("actions/github");
+const { Octokit } = require("@octokit/rest");
 const fs = require("fs");
 
-const octokit = new GitHub(process.env.GITHUB_TOKEN);
+const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
 
 // Read event payload
