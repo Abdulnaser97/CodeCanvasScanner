@@ -23,14 +23,14 @@ async function handlePullRequestChange() {
   console.log("files: ", files);
 
   for (const file of files) {
-    const addedlines = file.patch.match(/(\n\+)+\s*[^\d\+](.*)/g);
+    // const addedlines = file.patch.match(/(\n\+)+\s*[^\d\+](.*)/g);
     feedback.files.push(file.filename);
 
-    if (addedlines) {
-      for (const line of addedlines) {
-        feedback.lines.push({ file: file.filename, code: line });
-      }
-    }
+    // if (addedlines) {
+    //   for (const line of addedlines) {
+    //     feedback.lines.push({ file: file.filename, code: line });
+    //   }
+    // }
   }
 
   const action_required = feedback.files.length > 0;
