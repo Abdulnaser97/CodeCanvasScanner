@@ -12,23 +12,38 @@ const prNumber = eventPayload.number;
 const sha = eventPayload.pull_request.head.sha;
 
 async function handlePullRequestChange() {
-  const { data: files } = await octokit.rest.pulls.listFiles({
-    owner,
-    repo,
-    pull_number: prNumber,
-  });
-
   let feedback = { files: [], lines: [] };
 
-  for (const file of files) {
-    // const addedlines = file.patch.match(/(\n\+)+\s*[^\d\+](.*)/g);
-    feedback.files.push(file.filename);
+  // Fetch tree of the root level of the branch to get a list of all files
+  const { data: tree } = await octokit.rest.git.getTree({
+    owner,
+    repo,
+    tree_sha: sha,
+  });
+  console.log("tree: ", tree);
+  // Find a file with the .CodeCanvas extension from the tree
+  const codeCanvasFile = tree.tree.find(
+    (item) => item.path.endsWith(".CodeCanvas") && item.type === "blob"
+  );
 
-    // if (addedlines) {
-    //   for (const line of addedlines) {
-    //     feedback.lines.push({ file: file.filename, code: line });
-    //   }
-    // }
+  console.log("codeCanvasFile: ", codeCanvasFile);
+  let codeCanvasContent;
+  if (codeCanvasFile) {
+    try {
+      const { data } = await octokit.rest.repos.getContent({
+        owner,
+        repo,
+        path: codeCanvasFile.path,
+        ref: sha,
+      });
+      const contentBuffer = Buffer.from(data.content, "base64");
+      codeCanvasContent = JSON.parse(contentBuffer.toString("utf8"));
+      console.log("Parsed .CodeCanvas content:", codeCanvasContent);
+    } catch (error) {
+      throw error;
+    }
+  } else {
+    console.log("No file with .CodeCanvas extension found in the root level.");
   }
 
   const action_required = feedback.files.length > 0;
