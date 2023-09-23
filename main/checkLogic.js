@@ -20,6 +20,8 @@ async function handlePullRequestChange() {
 
   let feedback = { files: [], lines: [] };
 
+  console.log("files: ", files);
+
   for (const file of files) {
     const addedlines = file.patch.match(/(\n\+)+\s*[^\d\+](.*)/g);
     feedback.files.push(file.filename);
