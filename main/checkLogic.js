@@ -94,11 +94,29 @@ async function handlePullRequestChange() {
   console.log("conclusion: ", conclusion);
   console.log("sha: ", sha);
 
-  await octokit.rest.checks.create({
+  // Step 1: Create a new check run with in_progress status
+  const { data: newCheckRun } = await octokit.rest.checks.create({
     owner,
     repo,
     name: "CodeCanvas Scanner",
     head_sha: sha,
+    status: "in_progress",
+  });
+
+  // Step 2: Get the check run ID from the response
+  const checkRunId = newCheckRun.id;
+
+  // Step 3: Update the URL to include the check run ID
+  codeCanvasURL += `&checkRunId=${checkRunId}`;
+
+  // Update the summary with the new URL
+  summary += `\n\n ## [Click Here to Update Diagram](${codeCanvasURL})`;
+
+  // Step 4: Update the check run with its final status and details
+  await octokit.rest.checks.update({
+    owner,
+    repo,
+    check_run_id: checkRunId,
     status: "completed",
     conclusion: conclusion,
     completed_at: new Date().toISOString(),
