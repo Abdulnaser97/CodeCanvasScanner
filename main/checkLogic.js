@@ -71,19 +71,22 @@ async function handlePullRequestChange() {
     ? feedback.files.length + " files need update on CodeCanvas"
     : "No issues found";
   let summary = "";
+  let codeCanvasURL = `https://www.code-canvas.com/?repo=${repo}&owner=${owner}&branch=${process.env.GITHUB_REF.split(
+    "/"
+  ).pop()}&sha=${sha}`;
 
   if (action_required) {
     summary +=
       "### " +
-      "The following entries in repoData are impacted by the PR:" +
+      "The following entries CodeCanvas diagram nodes might be impacted by the PR:" +
       "\n";
     for (const issue of feedback.files) {
       summary += "**Entry:** " + issue.path + "," + "\n";
     }
 
-    summary += `\n\n ## [Click Here to Update Diagram](http://localhost:3001?pr=${prNumber}&repo=${repo}&branch=${process.env.GITHUB_REF.split(
-      "/"
-    ).pop()}&sha=${sha})`;
+    summary += `\n\n ## [Click Here to Update Diagram](${codeCanvasURL})`;
+  } else {
+    summary += "CodeCanvas Diagram is not be impacted by this PR.";
   }
   console.log("title: ", title);
   console.log("summary: ", summary);
