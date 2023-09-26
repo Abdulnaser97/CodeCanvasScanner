@@ -72,10 +72,8 @@ async function handlePullRequestChange() {
     : "No issues found";
   let summary = "";
   // get the branch name
-  console.log("GITHUB_REF", process.env.GITHUB_REF);
-  let codeCanvasURL = `http://localhost:3000/?repo=${repo}&owner=${owner}&branch=${process.env.GITHUB_REF.split(
-    "/"
-  ).pop()}&sha=${sha}`;
+  const sourceBranch = eventPayload.pull_request.head.ref;
+  let codeCanvasURL = `http://localhost:3000/?repo=${repo}&owner=${owner}&branch=${sourceBranch}&sha=${sha}`;
 
   if (action_required) {
     summary +=
