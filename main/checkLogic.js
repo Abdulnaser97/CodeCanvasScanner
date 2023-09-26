@@ -71,7 +71,7 @@ async function handlePullRequestChange() {
     ? feedback.files.length + " files need update on CodeCanvas"
     : "No issues found";
   let summary = "";
-  let codeCanvasURL = `https://www.code-canvas.com/?repo=${repo}&owner=${owner}&branch=${process.env.GITHUB_REF.split(
+  let codeCanvasURL = `http://localhost:3000/?repo=${repo}&owner=${owner}&branch=${process.env.GITHUB_REF.split(
     "/"
   ).pop()}&sha=${sha}`;
 
