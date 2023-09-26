@@ -71,6 +71,8 @@ async function handlePullRequestChange() {
     ? feedback.files.length + " files need update on CodeCanvas"
     : "No issues found";
   let summary = "";
+  // get the branch name
+  console.log("GITHUB_REF", process.env.GITHUB_REF);
   let codeCanvasURL = `http://localhost:3000/?repo=${repo}&owner=${owner}&branch=${process.env.GITHUB_REF.split(
     "/"
   ).pop()}&sha=${sha}`;
@@ -78,7 +80,7 @@ async function handlePullRequestChange() {
   if (action_required) {
     summary +=
       "### " +
-      "The following entries CodeCanvas diagram nodes might be impacted by the PR:" +
+      "The following CodeCanvas diagram nodes might be impacted by the PR:" +
       "\n";
     for (const issue of feedback.files) {
       summary += "**Entry:** " + issue.path + "," + "\n";
