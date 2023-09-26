@@ -83,8 +83,6 @@ async function handlePullRequestChange() {
     for (const issue of feedback.files) {
       summary += "**Entry:** " + issue.path + "," + "\n";
     }
-
-    summary += `\n\n ## [Click Here to Update Diagram](${codeCanvasURL})`;
   } else {
     summary += "CodeCanvas Diagram is not be impacted by this PR.";
   }
