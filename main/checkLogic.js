@@ -89,6 +89,7 @@ async function handlePullRequestChange() {
         feedback.files.push({
           path: entry.path,
           cellId: entry.cellId,
+          cellName: entry?.cellName,
         });
       }
     }
@@ -110,7 +111,10 @@ async function handlePullRequestChange() {
       "The following CodeCanvas diagram nodes might be impacted by the PR:" +
       "\n";
     for (const issue of feedback.files) {
-      summary += "**Entry:** " + issue.path + "," + "\n";
+      summary +=
+        "**Cell ID:** " + issue.cellId + issue?.cellName
+          ? `, **cell Title:** ${issue?.cellName}`
+          : "" + "\n";
     }
   } else {
     summary += "CodeCanvas Diagram is not be impacted by this PR.";
