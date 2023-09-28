@@ -59,10 +59,9 @@ async function handlePullRequestChange() {
 
   if (lastReviewedSHA === secondLastSHA) {
     console.log("No need to scan again");
-    await octokit.rest.checks.update({
+    await octokit.rest.checks.create({
       owner,
       repo,
-      check_run_id: checkRunId,
       status: "completed",
       conclusion: "success",
       completed_at: new Date().toISOString(),
