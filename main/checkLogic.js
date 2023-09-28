@@ -122,7 +122,7 @@ async function handlePullRequestChange() {
   console.log("sha: ", sha);
 
   let prURL = eventPayload.pull_request.html_url;
-  odeCanvasURL += `&prURL=${encodeURIComponent(prURL)}`;
+  codeCanvasURL += `&prURL=${encodeURIComponent(prURL)}`;
 
   // Step 1: Create a new check run with in_progress status
   const { data: newCheckRun } = await octokit.rest.checks.create({
