@@ -42,6 +42,39 @@ async function handlePullRequestChange() {
     Buffer.from(fileContent.content, "base64").toString("utf8")
   );
 
+  const lastReviewedSHA = codeCanvasJson.lastReviewedSHA;
+  // if last reviewd SHA is equal to the immediate previous push SHA, then no need to scan again
+
+  // first get the sha history and choose the second last sha
+  const { data: shaHistory } = await octokit.rest.repos.listCommits({
+    owner,
+    repo,
+    sha: sha,
+  });
+
+  const secondLastSHA = shaHistory[1].sha;
+  console.log("shaHistory: ", shaHistory);
+  console.log("lastReviewedSHA: ", lastReviewedSHA);
+  console.log("secondLastSHA: ", secondLastSHA);
+
+  if (lastReviewedSHA === secondLastSHA) {
+    console.log("No need to scan again");
+    await octokit.rest.checks.update({
+      owner,
+      repo,
+      check_run_id: checkRunId,
+      status: "completed",
+      conclusion: "success",
+      completed_at: new Date().toISOString(),
+      output: {
+        title: "CodeCanvas Diagram Review Completed",
+        summary: "All cells are up to date",
+        text: "",
+      },
+    });
+    return;
+  }
+
   const repoData = codeCanvasJson.repoData;
 
   // Get list of changed files in PR
