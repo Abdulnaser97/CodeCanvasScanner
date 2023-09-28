@@ -53,9 +53,6 @@ async function handlePullRequestChange() {
   });
 
   const secondLastSHA = shaHistory[1].sha;
-  console.log("shaHistory: ", shaHistory);
-  console.log("lastReviewedSHA: ", lastReviewedSHA);
-  console.log("secondLastSHA: ", secondLastSHA);
 
   if (lastReviewedSHA === secondLastSHA) {
     console.log("No need to scan again");
@@ -105,7 +102,7 @@ async function handlePullRequestChange() {
   let summary = "";
   // get the branch name
   const sourceBranch = eventPayload.pull_request.head.ref;
-  let codeCanvasURL = `http://localhost:3000/?repo=${repo}&owner=${owner}&branch=${sourceBranch}&sha=${sha}`;
+  let codeCanvasURL = `http://localhost:3000/?session=github&repo=${repo}&owner=${owner}&branch=${sourceBranch}&sha=${sha}`;
 
   if (action_required) {
     summary +=
@@ -123,6 +120,9 @@ async function handlePullRequestChange() {
   console.log("feedback: ", JSON.stringify(feedback));
   console.log("conclusion: ", conclusion);
   console.log("sha: ", sha);
+
+  let prUrl = eventPayload.pull_request.html_url;
+  odeCanvasURL += `&prUrl=${encodeURIComponent(prUrl)}`;
 
   // Step 1: Create a new check run with in_progress status
   const { data: newCheckRun } = await octokit.rest.checks.create({
