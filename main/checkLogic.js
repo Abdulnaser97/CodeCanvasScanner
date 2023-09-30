@@ -103,7 +103,7 @@ async function handlePullRequestChange() {
   let summary = "";
   // get the branch name
   const sourceBranch = eventPayload.pull_request.head.ref;
-  let codeCanvasURL = `http://localhost:3000/?session=github&repo=${repo}&owner=${owner}&branch=${sourceBranch}&sha=${sha}`;
+  let codeCanvasURL = `https://dev.code-canvas.com/?session=github&repo=${repo}&owner=${owner}&branch=${sourceBranch}&sha=${sha}`;
 
   if (action_required) {
     summary +=
