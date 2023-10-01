@@ -116,7 +116,7 @@ async function handlePullRequestChange() {
       }\n`;
     }
   } else {
-    summary += "CodeCanvas Diagram is not be impacted by this PR.";
+    summary += "CodeCanvas Diagram is not impacted by this PR.";
   }
   console.log("title: ", title);
   console.log("summary: ", summary);
