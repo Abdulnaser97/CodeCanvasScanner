@@ -1,5 +1,5 @@
-const { Octokit } = require("@octokit/rest");
-const fs = require("fs");
+import { Octokit } from "@octokit/rest";
+import fs from "fs";
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
@@ -43,7 +43,7 @@ async function handlePullRequestChange() {
   );
 
   const lastReviewedSHA = codeCanvasJson.lastReviewedSHA;
-  // if last reviewd SHA is equal to the immediate previous push SHA, then no need to scan again
+  // if last reviewed SHA is equal to the immediate previous push SHA, then no need to scan again
 
   // first get the sha history and choose the second last sha
   const { data: shaHistory } = await octokit.rest.repos.listCommits({
