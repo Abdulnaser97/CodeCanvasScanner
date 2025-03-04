@@ -84,16 +84,25 @@ async function handlePullRequestChange() {
   console.log("changedFiles: ", changedFiles);
   for (const entry of Object.values(repoData)) {
     // Exclude line-of-code entries
-    for (const file of changedFiles) {
+    for (const file of filesChanged) {
       if (
-        ((entry.parentPath && entry.parentPath.includes(file)) ||
-          entry.path.includes(file)) &&
+        ((entry.parentPath && entry.parentPath.includes(file.filename)) ||
+          entry.path.includes(file.filename)) &&
         entry?.cellId
       ) {
         feedback.files.push({
           path: entry.path,
           cellId: entry.cellId,
           cellName: entry?.cellName,
+          diff: {
+            filename: file.filename,
+            status: file.status,
+            additions: file.additions,
+            deletions: file.deletions,
+            changes: file.changes,
+            patch: file.patch,
+            previous_filename: file.previous_filename,
+          },
         });
       }
     }
