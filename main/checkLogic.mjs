@@ -85,7 +85,11 @@ async function handlePullRequestChange() {
   for (const entry of Object.values(repoData)) {
     // Exclude line-of-code entries
     for (const file of changedFiles) {
-      if (entry.path.includes(file) && entry?.cellId) {
+      if (
+        ((entry.parentPath && entry.parentPath.includes(file)) ||
+          entry.path.includes(file)) &&
+        entry?.cellId
+      ) {
         feedback.files.push({
           path: entry.path,
           cellId: entry.cellId,
