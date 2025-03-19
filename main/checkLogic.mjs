@@ -80,24 +80,49 @@ async function handlePullRequestChange() {
     pull_number: prNumber,
   });
 
+  // Create a map to group elements by their base file
+  const fileGroupMap = new Map();
+
   const changedFiles = filesChanged.map((file) => file.filename);
   console.log("changedFiles: ", changedFiles);
+
   for (const entry of Object.values(repoData)) {
     // Exclude line-of-code entries
-    for (const file of changedFiles) {
+    for (const file of filesChanged) {
       if (
-        ((entry.parentPath && entry.parentPath.includes(file)) ||
-          entry.path.includes(file)) &&
+        ((entry.parentPath && entry.parentPath.includes(file.filename)) ||
+          entry.path.includes(file.filename)) &&
         entry?.cellId
       ) {
-        feedback.files.push({
+        // Determine the base file this entry belongs to
+        const baseFile = entry.parentPath || entry.path;
+
+        if (!fileGroupMap.has(baseFile)) {
+          fileGroupMap.set(baseFile, []);
+        }
+
+        fileGroupMap.get(baseFile).push({
           path: entry.path,
           cellId: entry.cellId,
           cellName: entry?.cellName,
+          diff: {
+            filename: file.filename,
+            status: file.status,
+            additions: file.additions,
+            deletions: file.deletions,
+            changes: file.changes,
+            patch: file.patch,
+            previous_filename: file.previous_filename,
+          },
         });
       }
     }
   }
+
+  // Convert the map to a sorted array and flatten it
+  feedback.files = Array.from(fileGroupMap.entries())
+    .sort(([fileA], [fileB]) => fileA.localeCompare(fileB))
+    .flatMap(([_, elements]) => elements);
 
   const action_required = feedback.files.length > 0;
   const conclusion = action_required ? "action_required" : "success";
