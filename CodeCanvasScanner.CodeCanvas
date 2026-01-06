@@ -1,0 +1,1836 @@
+{
+	"drawioXML": "<mxfile>\n  <diagram id=\"4t4VlfVfbu6r-Tr8KFwS\" name=\"Page-1\">\n    <mxGraphModel dx=\"3529\" dy=\"2004\" grid=\"0\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"0\" arrows=\"1\" fold=\"1\" page=\"0\" pageScale=\"1\" pageWidth=\"850\" pageHeight=\"1100\" math=\"0\" shadow=\"0\">\n      <root>\n        <mxCell id=\"0\" />\n        <mxCell id=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=9;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;align=left;verticalAlign=bottom;spacing=0;spacingTop=-14;spacingLeft=15;arcSize=4;labelPosition=center;verticalLabelPosition=top;;fillColor=#fffefe\" parent=\"0\" />\n        <UserObject label=\".github\" value=\".github\" id=\"66e17324-2488-4b4b-be7e-8f4db6150931\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=28;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;align=left;verticalAlign=bottom;spacing=0;spacingTop=-14;spacingLeft=15;arcSize=4;labelPosition=center;verticalLabelPosition=top;;fillColor=#fffefe\" vertex=\"1\" parent=\"1\">\n            <mxGeometry x=\"70\" y=\"70\" width=\"650\" height=\"510\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"workflows\" value=\"workflows\" id=\"109371cf-683b-42f8-aa9f-f1eb61c8e308\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=25;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;align=left;verticalAlign=bottom;spacing=0;spacingTop=-14;spacingLeft=15;arcSize=4;labelPosition=center;verticalLabelPosition=top;;fillColor=#f9f3f3\" vertex=\"1\" parent=\"66e17324-2488-4b4b-be7e-8f4db6150931\">\n            <mxGeometry x=\"70\" y=\"70\" width=\"485\" height=\"370\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"codecanvas.yml\" value=\"codecanvas.yml\" id=\"953f8d89-5e94-4295-a591-33919f09d844\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=22;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;align=left;verticalAlign=bottom;spacing=0;spacingTop=-14;spacingLeft=15;arcSize=4;labelPosition=center;verticalLabelPosition=top;;fillColor=#f4e9e9\" vertex=\"1\" parent=\"109371cf-683b-42f8-aa9f-f1eb61c8e308\">\n            <mxGeometry x=\"70\" y=\"70\" width=\"320\" height=\"230\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"Workflow Trigger Configuration\" value=\"Workflow Trigger Configuration\" id=\"38ae05a2-03e9-4ddb-be79-116e7011439f\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"953f8d89-5e94-4295-a591-33919f09d844\">\n            <mxGeometry x=\"70\" y=\"70\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"main\" value=\"main\" id=\"14f03f21-60ff-4e33-a3f9-4675229109b6\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=43;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;align=left;verticalAlign=bottom;spacing=0;spacingTop=-14;spacingLeft=15;arcSize=4;labelPosition=center;verticalLabelPosition=top;;fillColor=#fffefe\" vertex=\"1\" parent=\"1\">\n            <mxGeometry x=\"910\" y=\"140\" width=\"1765\" height=\"638.0653253401648\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"checkLogic.mjs\" value=\"checkLogic.mjs\" id=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=40;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;align=left;verticalAlign=bottom;spacing=0;spacingTop=-14;spacingLeft=15;arcSize=4;labelPosition=center;verticalLabelPosition=top;;fillColor=#f9f3f3\" vertex=\"1\" parent=\"14f03f21-60ff-4e33-a3f9-4675229109b6\">\n            <mxGeometry x=\"95\" y=\"70\" width=\"1600\" height=\"498.0653253401648\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"Script Initialization &amp; Payload Parsing\" value=\"Script Initialization &amp; Payload Parsing\" id=\"6428b14a-3845-4626-a130-1548bc0732c0\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"70\" y=\"70\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"GitHub API (External)\" value=\"GitHub API (External)\" id=\"400fc665-74f4-40c5-8a78-8d4b77e5f51b\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"390\" y=\"71.64981172941683\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"Configuration File Detection\" value=\"Configuration File Detection\" id=\"29389299-573f-4ea1-9964-67192e1dd139\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"710\" y=\"71.64981172941683\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"GitHub API (External)\" value=\"GitHub API (External)\" id=\"5c9f1f62-d334-463a-b84a-9f902213bbb9\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"1030\" y=\"70.23564184611877\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"Data Parsing &amp; Configuration Load\" value=\"Data Parsing &amp; Configuration Load\" id=\"3bc0148b-174c-43ce-83f5-d0ea5a8db4b9\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"1350\" y=\"70.23564184611877\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <mxCell id=\"1207e5ac-059f-4418-b9a8-bef0e7238952\" value=\"API Request:&#xa;Fetch Git&#xa;Tree\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=13;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"6428b14a-3845-4626-a130-1548bc0732c0\" target=\"400fc665-74f4-40c5-8a78-8d4b77e5f51b\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\">\n              <mxPoint x=\"290\" y=\"115\" />\n              <mxPoint x=\"290\" y=\"116.64981172941683\" />\n            </Array>\n          </mxGeometry>\n        </mxCell>\n        <mxCell id=\"65aa895d-2e1e-451d-b27e-339be095e13c\" value=\"API Response:&#xa;Git Tree&#xa;Data\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=11;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"400fc665-74f4-40c5-8a78-8d4b77e5f51b\" target=\"29389299-573f-4ea1-9964-67192e1dd139\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\" />\n          </mxGeometry>\n        </mxCell>\n        <mxCell id=\"eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca\" value=\"API Request:&#xa;Fetch File&#xa;Blob\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=12;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"29389299-573f-4ea1-9964-67192e1dd139\" target=\"5c9f1f62-d334-463a-b84a-9f902213bbb9\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\">\n              <mxPoint x=\"930\" y=\"116.64981172941683\" />\n              <mxPoint x=\"930\" y=\"115.23564184611877\" />\n            </Array>\n          </mxGeometry>\n        </mxCell>\n        <mxCell id=\"b0978890-8088-447a-a0d1-51d3422f29bb\" value=\"API Response:&#xa;Blob Content\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=11;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"5c9f1f62-d334-463a-b84a-9f902213bbb9\" target=\"3bc0148b-174c-43ce-83f5-d0ea5a8db4b9\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\" />\n          </mxGeometry>\n        </mxCell>\n        <UserObject label=\"Configuration &amp; Payload Parsing\" value=\"Configuration &amp; Payload Parsing\" id=\"d713f462-f211-4983-9bc9-8efeb8522021\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"70\" y=\"208.06532534016475\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"GitHub API Service\" value=\"GitHub API Service\" id=\"d89c211e-eef0-43ca-923c-d821a6804bb3\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=14;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"390\" y=\"208.06532534016475\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"Extract Filenames\" value=\"Extract Filenames\" id=\"e92017ae-e113-460f-b973-63bf053c0ab0\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=15;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"710\" y=\"202.0680146706728\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"Cross-Reference Analysis\" value=\"Cross-Reference Analysis\" id=\"91bfc001-c8be-45c4-9a7e-94162b0001e7\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"1030\" y=\"202.0680146706728\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <mxCell id=\"e2f0a150-8f53-4bdc-b085-0e87cbe3d776\" value=\"API Request:&#xa;List Files\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=11;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"d713f462-f211-4983-9bc9-8efeb8522021\" target=\"d89c211e-eef0-43ca-923c-d821a6804bb3\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\" />\n          </mxGeometry>\n        </mxCell>\n        <mxCell id=\"e9bf1e27-8c26-49ba-8e2e-afc54e522257\" value=\"API Response:&#xa;Changed Files\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=11;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"d89c211e-eef0-43ca-923c-d821a6804bb3\" target=\"e92017ae-e113-460f-b973-63bf053c0ab0\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\">\n              <mxPoint x=\"610\" y=\"253.06532534016475\" />\n              <mxPoint x=\"610\" y=\"247.0680146706728\" />\n            </Array>\n          </mxGeometry>\n        </mxCell>\n        <mxCell id=\"f09d70e1-f04c-446e-b409-fbde706585f9\" value=\"Data Flow&#xa;to Matching&#xa;Logic\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=11;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"e92017ae-e113-460f-b973-63bf053c0ab0\" target=\"91bfc001-c8be-45c4-9a7e-94162b0001e7\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\" />\n          </mxGeometry>\n        </mxCell>\n        <UserObject label=\"Initialize and Locate Config\" value=\"Initialize and Locate Config\" id=\"ea65605f-bc18-40ba-b1be-50759037cfe6\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"70\" y=\"338.0653253401648\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"Parse Configuration Data\" value=\"Parse Configuration Data\" id=\"31daedae-d337-4fe1-9f09-525f141369bc\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"390\" y=\"338.0653253401648\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"Normalize File List\" value=\"Normalize File List\" id=\"d356a462-6b5b-4507-a2da-5beb54fa4455\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=14;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"710\" y=\"332.06801467067294\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"Impact Analysis Logic\" value=\"Impact Analysis Logic\" id=\"8b5c5360-3ac4-41aa-a41a-a0f29b2e4d6d\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"1030\" y=\"332.06801467067294\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <UserObject label=\"Generate Impact Report\" value=\"Generate Impact Report\" id=\"23a6161e-4891-4e7b-b738-d23a6b5c50da\">\n          <mxCell style=\"rounded=1;whiteSpace=wrap;html=1;container=1;glass=0;comic=0;fontSize=12;fontColor=#615B5B;strokeWidth=0.7;strokeColor=#999190;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontStyle=0;\" vertex=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\">\n            <mxGeometry x=\"1350\" y=\"332.06801467067294\" width=\"180\" height=\"90\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n        <mxCell id=\"9ce1689d-8833-473b-8abb-80c097b9ad4f\" value=\"Fetch Config&#xa;Content\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=11;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"ea65605f-bc18-40ba-b1be-50759037cfe6\" target=\"31daedae-d337-4fe1-9f09-525f141369bc\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\" />\n          </mxGeometry>\n        </mxCell>\n        <mxCell id=\"48cd42ad-d55e-47ba-99cf-58f639eefe34\" value=\"Fetch Changed&#xa;Files\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=12;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"31daedae-d337-4fe1-9f09-525f141369bc\" target=\"d356a462-6b5b-4507-a2da-5beb54fa4455\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\">\n              <mxPoint x=\"610\" y=\"383.0653253401648\" />\n              <mxPoint x=\"610\" y=\"377.06801467067294\" />\n            </Array>\n          </mxGeometry>\n        </mxCell>\n        <mxCell id=\"687405b4-61ec-459f-974a-8b2c9b2ddde7\" value=\"Data Transfer&#xa;to Analysis&#xa;Loop\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=11;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"d356a462-6b5b-4507-a2da-5beb54fa4455\" target=\"8b5c5360-3ac4-41aa-a41a-a0f29b2e4d6d\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\" />\n          </mxGeometry>\n        </mxCell>\n        <mxCell id=\"9680018e-e991-4aae-b9ce-7a26792b8147\" value=\"Transfer Analysis&#xa;Feedback\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=13;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359\" source=\"8b5c5360-3ac4-41aa-a41a-a0f29b2e4d6d\" target=\"23a6161e-4891-4e7b-b738-d23a6b5c50da\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\" />\n          </mxGeometry>\n        </mxCell>\n        <mxCell id=\"e3480b7c-44f7-4f95-a3b0-647481a47fd9\" value=\"Workflow Job&#xa;Execution\" style=\"edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;sketch=0;jumpStyle=arc;jumpSize=17;orthogonalLoop=1;jettySize=auto;html=0;shadow=0;labelBackgroundColor=none;fontFamily=Poppins;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DPoppins;fontSize=11;fontColor=#5C5C5C;endArrow=block;endFill=1;endSize=5;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;strokeColor=#A1A1A1;strokeWidth=2;arcSize=50;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;container=1;\" edge=\"1\" parent=\"1\" source=\"38ae05a2-03e9-4ddb-be79-116e7011439f\" target=\"6428b14a-3845-4626-a130-1548bc0732c0\">\n          <mxGeometry relative=\"1\" as=\"geometry\">\n            <Array as=\"points\" />\n          </mxGeometry>\n        </mxCell>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>\n",
+	"fileName": "CodeCanvasScanner.CodeCanvas",
+	"fileURL": "github",
+	"diagramTemplateVersion": 0.2,
+	"filePath": "CodeCanvasScanner.CodeCanvas",
+	"CodeCanvasIgnore": [
+		"# IMPORTANT",
+		"# - `.cursor` is NOT ignored by default.",
+		"# - `*.rules` is NOT ignored by default.",
+		"#os:macos",
+		".DS_Store",
+		"*._*",
+		".AppleDouble",
+		".LSOverride",
+		"*.Spotlight-V100/",
+		"*.Trashes/",
+		"*.fseventsd/",
+		"#os:windows",
+		"Thumbs.db",
+		"Thumbs.db:encryptable",
+		"ehthumbs.db",
+		"ehthumbs_vista.db",
+		"*.stackdump",
+		"desktop.ini",
+		"*$RECYCLE.BIN/",
+		"*.lnk",
+		"#os:linux",
+		"*~",
+		".directory",
+		"*.Trash-*/",
+		"*.fuse_hidden*",
+		"#editors",
+		".idea/",
+		".vscode/",
+		"*.swp",
+		"*.swo",
+		"*.swn",
+		"*.bak",
+		"*.tmp",
+		"#git",
+		"*.orig",
+		"*.rej",
+		"#node",
+		"*node_modules*",
+		"jspm_packages/",
+		"web_modules/",
+		"bower_components/",
+		"*.log",
+		"logs/",
+		"npm-debug.log*",
+		"yarn-debug.log*",
+		"yarn-error.log*",
+		"pnpm-debug.log*",
+		"lerna-debug.log*",
+		"report\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.json",
+		"pids/",
+		"*.pid",
+		"*.seed",
+		"*.pid.lock",
+		".eslintcache",
+		".stylelintcache",
+		"*.rpt2_cache/",
+		"*.rts2_cache_cjs/",
+		"*.rts2_cache_es/",
+		"*.rts2_cache_umd/",
+		"*.cache/",
+		"*.parcel-cache/",
+		"*.turbo/",
+		"*.next/",
+		"*.nuxt/",
+		"*.svelte-kit/",
+		"*.vite/",
+		"*.storybook-out/",
+		"dist/",
+		"build/",
+		"out/",
+		"*.output/",
+		"tmp/",
+		"temp/",
+		"*.temp/",
+		"*.tsbuildinfo",
+		"build/Release/",
+		"*.pnp.*",
+		"#react-native",
+		"*.expo/",
+		"*.expo-shared/",
+		"*.watchmanconfig",
+		"ios/build/",
+		"ios/Pods/",
+		"android/app/build/",
+		"android/*.gradle/",
+		"*.keystore",
+		"*.jks",
+		"#python",
+		"__pycache__/",
+		"*.pyc",
+		"*.pyo",
+		"*.pyd",
+		"*.so",
+		".Python",
+		"pip-log.txt",
+		"pip-delete-this-directory.txt",
+		".coverage",
+		"htmlcov/",
+		"*.pytest_cache/",
+		"*.mypy_cache/",
+		"*.ruff_cache/",
+		"*.tox/",
+		"*.nox/",
+		"*.hypothesis/",
+		"*.pytype/",
+		"*.pyre/",
+		"*.venv/",
+		"venv/",
+		"ENV/",
+		"env/",
+		"build/",
+		"dist/",
+		"*.egg-info/",
+		"*.eggs/",
+		"pip-wheel-metadata/",
+		"#dotnet",
+		"*.suo",
+		"*.user",
+		"*.userosscache",
+		"*.sln.docstates",
+		"*.vs/",
+		"bin/",
+		"obj/",
+		"TestResults/",
+		"*.nupkg",
+		"*.snupkg",
+		"packages/",
+		"*.pdb",
+		"*.cache",
+		"#java",
+		"*.class",
+		"*.jar",
+		"*.war",
+		"*.ear",
+		"target/",
+		"*.gradle/",
+		"build/",
+		".classpath",
+		".project",
+		"*.settings/",
+		"hs_err_pid*",
+		"#go",
+		"*.exe",
+		"*.dll",
+		"*.so",
+		"*.dylib",
+		"*.test",
+		"*.out",
+		"#rust",
+		"target/",
+		"*.rs.bk",
+		"#ruby",
+		"*.gem",
+		"*.rbc",
+		"coverage/",
+		"tmp/",
+		"*.bundle/",
+		"vendor/bundle/",
+		"*.yardoc/",
+		"_yardoc/",
+		"pkg/",
+		".byebug_history",
+		"#php",
+		"vendor/",
+		".phpunit.result.cache",
+		".php-cs-fixer.cache",
+		".phpstan.result.cache",
+		"#general:build-artifacts",
+		"*.min.js",
+		"*.min.css",
+		"*.map",
+		"*public/assets/",
+		"#general:binary-assets",
+		"*.png",
+		"*.jpg",
+		"*.jpeg",
+		"*.gif",
+		"*.webp",
+		"*.ico",
+		"*.bmp",
+		"*.tiff",
+		"*.psd",
+		"*.ai",
+		"*.pdf",
+		"*.ttf",
+		"*.woff",
+		"*.woff2",
+		"*.eot",
+		"*.otf",
+		"*.svg",
+		"*.zip",
+		"*.tar",
+		"*.gz",
+		"*.tgz",
+		"*.7z"
+	],
+	"repoData": {
+		".github": {
+			"path": ".github",
+			"fileName": ".github",
+			"cellName": ".github",
+			"cellId": "66e17324-2488-4b4b-be7e-8f4db6150931",
+			"visible": true,
+			"children": [
+				".github/workflows"
+			]
+		},
+		".github/workflows": {
+			"path": ".github/workflows",
+			"fileName": "workflows",
+			"cellName": "workflows",
+			"cellId": "109371cf-683b-42f8-aa9f-f1eb61c8e308",
+			"visible": true,
+			"parentCellId": "66e17324-2488-4b4b-be7e-8f4db6150931",
+			"children": [
+				".github/workflows/codecanvas.yml"
+			]
+		},
+		".github/workflows/codecanvas.yml": {
+			"path": ".github/workflows/codecanvas.yml",
+			"fileName": "codecanvas.yml",
+			"cellName": "codecanvas.yml",
+			"cellId": "953f8d89-5e94-4295-a591-33919f09d844",
+			"visible": true,
+			"parentCellId": "109371cf-683b-42f8-aa9f-f1eb61c8e308",
+			"children": [
+				".github/workflows/codecanvas.yml-simstep-a2706fe2-b122-46de-a6ab-a2857735bcab",
+				"generated-edge-simstep-e1dd89e4-92bf-4c8c-bea9-4f8d6b69b2aa-e3480b7c-44f7-4f95-a3b0-647481a47fd9"
+			]
+		},
+		"main": {
+			"path": "main",
+			"fileName": "main",
+			"cellName": "main",
+			"cellId": "14f03f21-60ff-4e33-a3f9-4675229109b6",
+			"visible": true,
+			"children": [
+				"main/checkLogic.mjs"
+			]
+		},
+		"main/checkLogic.mjs": {
+			"path": "main/checkLogic.mjs",
+			"fileName": "checkLogic.mjs",
+			"cellName": "checkLogic.mjs",
+			"cellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"visible": true,
+			"parentCellId": "14f03f21-60ff-4e33-a3f9-4675229109b6",
+			"children": [
+				"main/checkLogic.mjs-simstep-c5a2fb94-943b-4e96-bd5a-ef5b08c395b4",
+				"main/checkLogic.mjs-simstep-a9550ad2-f637-4188-b30c-cc435a60ca8d",
+				"main/checkLogic.mjs-simstep-44dd0524-379f-4ac8-9e0b-634f320ba452",
+				"main/checkLogic.mjs-simstep-8e47f869-b001-4b1b-8c87-76f192b49e1f",
+				"main/checkLogic.mjs-simstep-3bd54aa5-8c1d-4bf3-bc19-235341cefcf2",
+				"generated-edge-simstep-d9b8b423-5687-411b-8601-45bd3b998117-1207e5ac-059f-4418-b9a8-bef0e7238952",
+				"generated-edge-simstep-877c911e-9fc5-4060-ad63-a601393c0383-65aa895d-2e1e-451d-b27e-339be095e13c",
+				"generated-edge-simstep-e44706ad-198c-42a6-9126-20a181ae503f-eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca",
+				"generated-edge-simstep-d1f9ebe8-362a-41f0-b128-89a1c045ef71-b0978890-8088-447a-a0d1-51d3422f29bb",
+				"main/checkLogic.mjs-simstep-41f42922-bb0d-4df4-9589-c2198a543fcb",
+				"main/checkLogic.mjs-simstep-eb46fa64-892d-43f6-84e2-bc3e92ee9208",
+				"main/checkLogic.mjs-simstep-a3d5faf0-9bf5-42e5-8ad3-208dfb13400b",
+				"main/checkLogic.mjs-simstep-69af68df-ec1e-4385-8484-7f6db655a5ac",
+				"generated-edge-simstep-e5c287a7-1691-4298-bbe1-b82cc2c9a7b7-e2f0a150-8f53-4bdc-b085-0e87cbe3d776",
+				"generated-edge-simstep-9894d963-27b1-42e1-a0c7-af157b755011-e9bf1e27-8c26-49ba-8e2e-afc54e522257",
+				"generated-edge-simstep-2a21250b-798b-4ec3-a384-4a669cbeca85-f09d70e1-f04c-446e-b409-fbde706585f9",
+				"main/checkLogic.mjs-simstep-db115145-d424-4da9-bbd2-122efd4d5549",
+				"main/checkLogic.mjs-simstep-d949ceab-f7da-440c-99a2-90c70a2658e9",
+				"main/checkLogic.mjs-simstep-b15e5b5b-4d48-41ee-8dcd-31a6c5fa91e2",
+				"main/checkLogic.mjs-simstep-8f646122-1854-4ac9-a827-52599e2f34d0",
+				"main/checkLogic.mjs-simstep-ef3f4a07-f1d3-4625-ba09-48b92cb7eb0a",
+				"generated-edge-simstep-01de7213-167b-4a50-95c1-9438aa14878b-9ce1689d-8833-473b-8abb-80c097b9ad4f",
+				"generated-edge-simstep-3e97681c-6a2f-4ca9-8297-305d8e1cf528-48cd42ad-d55e-47ba-99cf-58f639eefe34",
+				"generated-edge-simstep-dd102807-3343-4323-86d7-d1501ef8509b-687405b4-61ec-459f-974a-8b2c9b2ddde7",
+				"generated-edge-simstep-145e4543-ec84-4165-ad43-a6ea6adbe618-9680018e-e991-4aae-b9ce-7a26792b8147"
+			]
+		},
+		"66e17324-2488-4b4b-be7e-8f4db6150931": {
+			"path": "66e17324-2488-4b4b-be7e-8f4db6150931",
+			"cellName": ".github",
+			"cellId": "66e17324-2488-4b4b-be7e-8f4db6150931",
+			"visible": true
+		},
+		"14f03f21-60ff-4e33-a3f9-4675229109b6": {
+			"path": "14f03f21-60ff-4e33-a3f9-4675229109b6",
+			"cellName": "main",
+			"cellId": "14f03f21-60ff-4e33-a3f9-4675229109b6",
+			"visible": true
+		},
+		"109371cf-683b-42f8-aa9f-f1eb61c8e308": {
+			"path": "109371cf-683b-42f8-aa9f-f1eb61c8e308",
+			"cellName": "workflows",
+			"cellId": "109371cf-683b-42f8-aa9f-f1eb61c8e308",
+			"visible": true,
+			"parentCellId": "66e17324-2488-4b4b-be7e-8f4db6150931"
+		},
+		"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359": {
+			"path": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"cellName": "checkLogic.mjs",
+			"cellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"visible": true,
+			"parentCellId": "14f03f21-60ff-4e33-a3f9-4675229109b6"
+		},
+		"953f8d89-5e94-4295-a591-33919f09d844": {
+			"path": "953f8d89-5e94-4295-a591-33919f09d844",
+			"cellName": "codecanvas.yml",
+			"cellId": "953f8d89-5e94-4295-a591-33919f09d844",
+			"visible": true,
+			"parentCellId": "109371cf-683b-42f8-aa9f-f1eb61c8e308"
+		},
+		"38ae05a2-03e9-4ddb-be79-116e7011439f": {
+			"path": "38ae05a2-03e9-4ddb-be79-116e7011439f",
+			"cellName": "Workflow Trigger Configuration",
+			"cellId": "38ae05a2-03e9-4ddb-be79-116e7011439f",
+			"visible": true,
+			"parentCellId": "953f8d89-5e94-4295-a591-33919f09d844"
+		},
+		".github/workflows/codecanvas.yml-simstep-a2706fe2-b122-46de-a6ab-a2857735bcab": {
+			"path": ".github/workflows/codecanvas.yml-simstep-a2706fe2-b122-46de-a6ab-a2857735bcab",
+			"fileName": "codecanvas.yml",
+			"wiki": "The process initiates when a Pull Request is opened, synchronized, or reopened. This configuration defines the entry point for the automation in the GitHub Actions workflow.",
+			"cellName": "Workflow Trigger Configuration",
+			"cellId": "38ae05a2-03e9-4ddb-be79-116e7011439f",
+			"visible": true,
+			"startLine": 3,
+			"endLine": 8,
+			"parentCellId": "953f8d89-5e94-4295-a591-33919f09d844",
+			"parentPath": ".github/workflows/codecanvas.yml",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "a2706fe2-b122-46de-a6ab-a2857735bcab"
+				}
+			]
+		},
+		"6428b14a-3845-4626-a130-1548bc0732c0": {
+			"path": "6428b14a-3845-4626-a130-1548bc0732c0",
+			"cellName": "Script Initialization & Payload Parsing",
+			"cellId": "6428b14a-3845-4626-a130-1548bc0732c0",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-c5a2fb94-943b-4e96-bd5a-ef5b08c395b4": {
+			"path": "main/checkLogic.mjs-simstep-c5a2fb94-943b-4e96-bd5a-ef5b08c395b4",
+			"fileName": "checkLogic.mjs",
+			"wiki": "The script initializes the Octokit client and reads the GitHub event payload from the filesystem to extract the Pull Request number and the HEAD SHA.",
+			"cellName": "Script Initialization & Payload Parsing",
+			"cellId": "6428b14a-3845-4626-a130-1548bc0732c0",
+			"visible": true,
+			"startLine": 4,
+			"endLine": 12,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "c5a2fb94-943b-4e96-bd5a-ef5b08c395b4"
+				}
+			]
+		},
+		"400fc665-74f4-40c5-8a78-8d4b77e5f51b": {
+			"path": "400fc665-74f4-40c5-8a78-8d4b77e5f51b",
+			"cellName": "GitHub API (External)",
+			"cellId": "400fc665-74f4-40c5-8a78-8d4b77e5f51b",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-a9550ad2-f637-4188-b30c-cc435a60ca8d": {
+			"path": "main/checkLogic.mjs-simstep-a9550ad2-f637-4188-b30c-cc435a60ca8d",
+			"fileName": "checkLogic.mjs",
+			"wiki": "The GitHub API processes the request and retrieves the Git tree structure for the specified SHA. (Represented here by the client interface point).",
+			"cellName": "GitHub API (External)",
+			"cellId": "400fc665-74f4-40c5-8a78-8d4b77e5f51b",
+			"visible": true,
+			"startLine": 16,
+			"endLine": 21,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "a9550ad2-f637-4188-b30c-cc435a60ca8d"
+				}
+			]
+		},
+		"29389299-573f-4ea1-9964-67192e1dd139": {
+			"path": "29389299-573f-4ea1-9964-67192e1dd139",
+			"cellName": "Configuration File Detection",
+			"cellId": "29389299-573f-4ea1-9964-67192e1dd139",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-44dd0524-379f-4ac8-9e0b-634f320ba452": {
+			"path": "main/checkLogic.mjs-simstep-44dd0524-379f-4ac8-9e0b-634f320ba452",
+			"fileName": "checkLogic.mjs",
+			"wiki": "The script iterates through the file list to find a file ending with `.CodeCanvas`. If found, it extracts the file's SHA for content retrieval.",
+			"cellName": "Configuration File Detection",
+			"cellId": "29389299-573f-4ea1-9964-67192e1dd139",
+			"visible": true,
+			"startLine": 23,
+			"endLine": 32,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "44dd0524-379f-4ac8-9e0b-634f320ba452"
+				}
+			]
+		},
+		"5c9f1f62-d334-463a-b84a-9f902213bbb9": {
+			"path": "5c9f1f62-d334-463a-b84a-9f902213bbb9",
+			"cellName": "GitHub API (External)",
+			"cellId": "5c9f1f62-d334-463a-b84a-9f902213bbb9",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-8e47f869-b001-4b1b-8c87-76f192b49e1f": {
+			"path": "main/checkLogic.mjs-simstep-8e47f869-b001-4b1b-8c87-76f192b49e1f",
+			"fileName": "checkLogic.mjs",
+			"wiki": "The GitHub API locates the blob object by SHA and returns its content, usually Base64 encoded.",
+			"cellName": "GitHub API (External)",
+			"cellId": "5c9f1f62-d334-463a-b84a-9f902213bbb9",
+			"visible": true,
+			"startLine": 35,
+			"endLine": 39,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "8e47f869-b001-4b1b-8c87-76f192b49e1f"
+				}
+			]
+		},
+		"3bc0148b-174c-43ce-83f5-d0ea5a8db4b9": {
+			"path": "3bc0148b-174c-43ce-83f5-d0ea5a8db4b9",
+			"cellName": "Data Parsing & Configuration Load",
+			"cellId": "3bc0148b-174c-43ce-83f5-d0ea5a8db4b9",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-3bd54aa5-8c1d-4bf3-bc19-235341cefcf2": {
+			"path": "main/checkLogic.mjs-simstep-3bd54aa5-8c1d-4bf3-bc19-235341cefcf2",
+			"fileName": "checkLogic.mjs",
+			"wiki": "The script decodes the Base64 content and parses it into a JSON object to access the `repoData` and `lastReviewedSHA` properties for further processing.",
+			"cellName": "Data Parsing & Configuration Load",
+			"cellId": "3bc0148b-174c-43ce-83f5-d0ea5a8db4b9",
+			"visible": true,
+			"startLine": 41,
+			"endLine": 43,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "3bd54aa5-8c1d-4bf3-bc19-235341cefcf2"
+				}
+			]
+		},
+		"e3480b7c-44f7-4f95-a3b0-647481a47fd9": {
+			"path": "e3480b7c-44f7-4f95-a3b0-647481a47fd9",
+			"cellName": "Workflow Job\nExecution",
+			"cellId": "e3480b7c-44f7-4f95-a3b0-647481a47fd9",
+			"visible": true
+		},
+		"generated-edge-simstep-e1dd89e4-92bf-4c8c-bea9-4f8d6b69b2aa-e3480b7c-44f7-4f95-a3b0-647481a47fd9": {
+			"path": "generated-edge-simstep-e1dd89e4-92bf-4c8c-bea9-4f8d6b69b2aa-e3480b7c-44f7-4f95-a3b0-647481a47fd9",
+			"fileName": "codecanvas.yml",
+			"cellName": "Workflow Job Execution",
+			"cellId": "e3480b7c-44f7-4f95-a3b0-647481a47fd9",
+			"visible": true,
+			"startLine": 22,
+			"endLine": 28,
+			"parentCellId": "953f8d89-5e94-4295-a591-33919f09d844",
+			"parentPath": ".github/workflows/codecanvas.yml",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "e1dd89e4-92bf-4c8c-bea9-4f8d6b69b2aa"
+				}
+			]
+		},
+		"1207e5ac-059f-4418-b9a8-bef0e7238952": {
+			"path": "1207e5ac-059f-4418-b9a8-bef0e7238952",
+			"cellName": "API Request:\nFetch Git\nTree",
+			"cellId": "1207e5ac-059f-4418-b9a8-bef0e7238952",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-d9b8b423-5687-411b-8601-45bd3b998117-1207e5ac-059f-4418-b9a8-bef0e7238952": {
+			"path": "generated-edge-simstep-d9b8b423-5687-411b-8601-45bd3b998117-1207e5ac-059f-4418-b9a8-bef0e7238952",
+			"fileName": "checkLogic.mjs",
+			"cellName": "API Request: Fetch Git Tree",
+			"cellId": "1207e5ac-059f-4418-b9a8-bef0e7238952",
+			"visible": true,
+			"startLine": 16,
+			"endLine": 21,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "d9b8b423-5687-411b-8601-45bd3b998117"
+				}
+			]
+		},
+		"65aa895d-2e1e-451d-b27e-339be095e13c": {
+			"path": "65aa895d-2e1e-451d-b27e-339be095e13c",
+			"cellName": "API Response:\nGit Tree\nData",
+			"cellId": "65aa895d-2e1e-451d-b27e-339be095e13c",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-877c911e-9fc5-4060-ad63-a601393c0383-65aa895d-2e1e-451d-b27e-339be095e13c": {
+			"path": "generated-edge-simstep-877c911e-9fc5-4060-ad63-a601393c0383-65aa895d-2e1e-451d-b27e-339be095e13c",
+			"fileName": "checkLogic.mjs",
+			"cellName": "API Response: Git Tree Data",
+			"cellId": "65aa895d-2e1e-451d-b27e-339be095e13c",
+			"visible": true,
+			"startLine": 16,
+			"endLine": 21,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "877c911e-9fc5-4060-ad63-a601393c0383"
+				}
+			]
+		},
+		"eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca": {
+			"path": "eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca",
+			"cellName": "API Request:\nFetch File\nBlob",
+			"cellId": "eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-e44706ad-198c-42a6-9126-20a181ae503f-eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca": {
+			"path": "generated-edge-simstep-e44706ad-198c-42a6-9126-20a181ae503f-eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca",
+			"fileName": "checkLogic.mjs",
+			"cellName": "API Request: Fetch File Blob",
+			"cellId": "eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca",
+			"visible": true,
+			"startLine": 35,
+			"endLine": 39,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "e44706ad-198c-42a6-9126-20a181ae503f"
+				}
+			]
+		},
+		"b0978890-8088-447a-a0d1-51d3422f29bb": {
+			"path": "b0978890-8088-447a-a0d1-51d3422f29bb",
+			"cellName": "API Response:\nBlob Content",
+			"cellId": "b0978890-8088-447a-a0d1-51d3422f29bb",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-d1f9ebe8-362a-41f0-b128-89a1c045ef71-b0978890-8088-447a-a0d1-51d3422f29bb": {
+			"path": "generated-edge-simstep-d1f9ebe8-362a-41f0-b128-89a1c045ef71-b0978890-8088-447a-a0d1-51d3422f29bb",
+			"fileName": "checkLogic.mjs",
+			"cellName": "API Response: Blob Content",
+			"cellId": "b0978890-8088-447a-a0d1-51d3422f29bb",
+			"visible": true,
+			"startLine": 35,
+			"endLine": 39,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How CodeCanvas configuration detection works",
+					"simStepId": "d1f9ebe8-362a-41f0-b128-89a1c045ef71"
+				}
+			]
+		},
+		"d713f462-f211-4983-9bc9-8efeb8522021": {
+			"path": "d713f462-f211-4983-9bc9-8efeb8522021",
+			"cellName": "Configuration & Payload Parsing",
+			"cellId": "d713f462-f211-4983-9bc9-8efeb8522021",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-41f42922-bb0d-4df4-9589-c2198a543fcb": {
+			"path": "main/checkLogic.mjs-simstep-41f42922-bb0d-4df4-9589-c2198a543fcb",
+			"fileName": "checkLogic.mjs",
+			"wiki": "The script begins by reading the GitHub event payload from the file system to retrieve the Pull Request number and the commit SHA. This establishes the context for the analysis.",
+			"cellName": "Configuration & Payload Parsing",
+			"cellId": "d713f462-f211-4983-9bc9-8efeb8522021",
+			"visible": true,
+			"startLine": 7,
+			"endLine": 12,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How pull request file change analysis works",
+					"simStepId": "41f42922-bb0d-4df4-9589-c2198a543fcb"
+				}
+			]
+		},
+		"d89c211e-eef0-43ca-923c-d821a6804bb3": {
+			"path": "d89c211e-eef0-43ca-923c-d821a6804bb3",
+			"cellName": "GitHub API Service",
+			"cellId": "d89c211e-eef0-43ca-923c-d821a6804bb3",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-eb46fa64-892d-43f6-84e2-bc3e92ee9208": {
+			"path": "main/checkLogic.mjs-simstep-eb46fa64-892d-43f6-84e2-bc3e92ee9208",
+			"fileName": "checkLogic.mjs",
+			"wiki": "The external GitHub API processes the request, querying the repository's pull request data to find the diff and identify changed files.",
+			"cellName": "GitHub API Service",
+			"cellId": "d89c211e-eef0-43ca-923c-d821a6804bb3",
+			"visible": true,
+			"startLine": 77,
+			"endLine": 81,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How pull request file change analysis works",
+					"simStepId": "eb46fa64-892d-43f6-84e2-bc3e92ee9208"
+				}
+			]
+		},
+		"e92017ae-e113-460f-b973-63bf053c0ab0": {
+			"path": "e92017ae-e113-460f-b973-63bf053c0ab0",
+			"cellName": "Extract Filenames",
+			"cellId": "e92017ae-e113-460f-b973-63bf053c0ab0",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-a3d5faf0-9bf5-42e5-8ad3-208dfb13400b": {
+			"path": "main/checkLogic.mjs-simstep-a3d5faf0-9bf5-42e5-8ad3-208dfb13400b",
+			"fileName": "checkLogic.mjs",
+			"wiki": "The raw file objects from the API are mapped to a simple array of file paths (strings) for easier processing during the matching phase.",
+			"cellName": "Extract Filenames",
+			"cellId": "e92017ae-e113-460f-b973-63bf053c0ab0",
+			"visible": true,
+			"startLine": 83,
+			"endLine": 84,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How pull request file change analysis works",
+					"simStepId": "a3d5faf0-9bf5-42e5-8ad3-208dfb13400b"
+				}
+			]
+		},
+		"91bfc001-c8be-45c4-9a7e-94162b0001e7": {
+			"path": "91bfc001-c8be-45c4-9a7e-94162b0001e7",
+			"cellName": "Cross-Reference Analysis",
+			"cellId": "91bfc001-c8be-45c4-9a7e-94162b0001e7",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-69af68df-ec1e-4385-8484-7f6db655a5ac": {
+			"path": "main/checkLogic.mjs-simstep-69af68df-ec1e-4385-8484-7f6db655a5ac",
+			"fileName": "checkLogic.mjs",
+			"wiki": "The system iterates through the repository data (diagram nodes) and checks if any changed file matches a diagram entry's path or parent path. Matches are recorded in the feedback object.",
+			"cellName": "Cross-Reference Analysis",
+			"cellId": "91bfc001-c8be-45c4-9a7e-94162b0001e7",
+			"visible": true,
+			"startLine": 85,
+			"endLine": 91,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How pull request file change analysis works",
+					"simStepId": "69af68df-ec1e-4385-8484-7f6db655a5ac"
+				}
+			]
+		},
+		"e2f0a150-8f53-4bdc-b085-0e87cbe3d776": {
+			"path": "e2f0a150-8f53-4bdc-b085-0e87cbe3d776",
+			"cellName": "API Request:\nList Files",
+			"cellId": "e2f0a150-8f53-4bdc-b085-0e87cbe3d776",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-e5c287a7-1691-4298-bbe1-b82cc2c9a7b7-e2f0a150-8f53-4bdc-b085-0e87cbe3d776": {
+			"path": "generated-edge-simstep-e5c287a7-1691-4298-bbe1-b82cc2c9a7b7-e2f0a150-8f53-4bdc-b085-0e87cbe3d776",
+			"fileName": "checkLogic.mjs",
+			"cellName": "API Request: List Files",
+			"cellId": "e2f0a150-8f53-4bdc-b085-0e87cbe3d776",
+			"visible": true,
+			"startLine": 77,
+			"endLine": 81,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How pull request file change analysis works",
+					"simStepId": "e5c287a7-1691-4298-bbe1-b82cc2c9a7b7"
+				}
+			]
+		},
+		"e9bf1e27-8c26-49ba-8e2e-afc54e522257": {
+			"path": "e9bf1e27-8c26-49ba-8e2e-afc54e522257",
+			"cellName": "API Response:\nChanged Files",
+			"cellId": "e9bf1e27-8c26-49ba-8e2e-afc54e522257",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-9894d963-27b1-42e1-a0c7-af157b755011-e9bf1e27-8c26-49ba-8e2e-afc54e522257": {
+			"path": "generated-edge-simstep-9894d963-27b1-42e1-a0c7-af157b755011-e9bf1e27-8c26-49ba-8e2e-afc54e522257",
+			"fileName": "checkLogic.mjs",
+			"cellName": "API Response: Changed Files",
+			"cellId": "e9bf1e27-8c26-49ba-8e2e-afc54e522257",
+			"visible": true,
+			"startLine": 77,
+			"endLine": 81,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How pull request file change analysis works",
+					"simStepId": "9894d963-27b1-42e1-a0c7-af157b755011"
+				}
+			]
+		},
+		"f09d70e1-f04c-446e-b409-fbde706585f9": {
+			"path": "f09d70e1-f04c-446e-b409-fbde706585f9",
+			"cellName": "Data Flow\nto Matching\nLogic",
+			"cellId": "f09d70e1-f04c-446e-b409-fbde706585f9",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-2a21250b-798b-4ec3-a384-4a669cbeca85-f09d70e1-f04c-446e-b409-fbde706585f9": {
+			"path": "generated-edge-simstep-2a21250b-798b-4ec3-a384-4a669cbeca85-f09d70e1-f04c-446e-b409-fbde706585f9",
+			"fileName": "checkLogic.mjs",
+			"cellName": "Data Flow to Matching Logic",
+			"cellId": "f09d70e1-f04c-446e-b409-fbde706585f9",
+			"visible": true,
+			"startLine": 85,
+			"endLine": 85,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How pull request file change analysis works",
+					"simStepId": "2a21250b-798b-4ec3-a384-4a669cbeca85"
+				}
+			]
+		},
+		"ea65605f-bc18-40ba-b1be-50759037cfe6": {
+			"path": "ea65605f-bc18-40ba-b1be-50759037cfe6",
+			"cellName": "Initialize and Locate Config",
+			"cellId": "ea65605f-bc18-40ba-b1be-50759037cfe6",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-db115145-d424-4da9-bbd2-122efd4d5549": {
+			"path": "main/checkLogic.mjs-simstep-db115145-d424-4da9-bbd2-122efd4d5549",
+			"fileName": "checkLogic.mjs",
+			"wiki": "The process begins by reading the GitHub event payload and querying the git tree to locate the `.CodeCanvas` configuration file.",
+			"cellName": "Initialize and Locate Config",
+			"cellId": "ea65605f-bc18-40ba-b1be-50759037cfe6",
+			"visible": true,
+			"startLine": 1,
+			"endLine": 1,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How impact analysis on diagram nodes works",
+					"simStepId": "db115145-d424-4da9-bbd2-122efd4d5549"
+				}
+			]
+		},
+		"31daedae-d337-4fe1-9f09-525f141369bc": {
+			"path": "31daedae-d337-4fe1-9f09-525f141369bc",
+			"cellName": "Parse Configuration Data",
+			"cellId": "31daedae-d337-4fe1-9f09-525f141369bc",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-d949ceab-f7da-440c-99a2-90c70a2658e9": {
+			"path": "main/checkLogic.mjs-simstep-d949ceab-f7da-440c-99a2-90c70a2658e9",
+			"fileName": "checkLogic.mjs",
+			"wiki": "Decodes the file content from base64 and parses it into a JSON object to extract `repoData`, which contains the mapping between diagram nodes and file paths.",
+			"cellName": "Parse Configuration Data",
+			"cellId": "31daedae-d337-4fe1-9f09-525f141369bc",
+			"visible": true,
+			"startLine": 70,
+			"endLine": 122,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How impact analysis on diagram nodes works",
+					"simStepId": "d949ceab-f7da-440c-99a2-90c70a2658e9"
+				}
+			]
+		},
+		"d356a462-6b5b-4507-a2da-5beb54fa4455": {
+			"path": "d356a462-6b5b-4507-a2da-5beb54fa4455",
+			"cellName": "Normalize File List",
+			"cellId": "d356a462-6b5b-4507-a2da-5beb54fa4455",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-b15e5b5b-4d48-41ee-8dcd-31a6c5fa91e2": {
+			"path": "main/checkLogic.mjs-simstep-b15e5b5b-4d48-41ee-8dcd-31a6c5fa91e2",
+			"fileName": "checkLogic.mjs",
+			"wiki": "Extracts just the filenames from the detailed file objects returned by the API to create a simple list of changed paths.",
+			"cellName": "Normalize File List",
+			"cellId": "d356a462-6b5b-4507-a2da-5beb54fa4455",
+			"visible": true,
+			"startLine": 83,
+			"endLine": 84,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How impact analysis on diagram nodes works",
+					"simStepId": "b15e5b5b-4d48-41ee-8dcd-31a6c5fa91e2"
+				}
+			]
+		},
+		"8b5c5360-3ac4-41aa-a41a-a0f29b2e4d6d": {
+			"path": "8b5c5360-3ac4-41aa-a41a-a0f29b2e4d6d",
+			"cellName": "Impact Analysis Logic",
+			"cellId": "8b5c5360-3ac4-41aa-a41a-a0f29b2e4d6d",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-8f646122-1854-4ac9-a827-52599e2f34d0": {
+			"path": "main/checkLogic.mjs-simstep-8f646122-1854-4ac9-a827-52599e2f34d0",
+			"fileName": "checkLogic.mjs",
+			"wiki": "Iterates through each entry in `repoData`. It checks if any changed file matches the entry's `path` or `parentPath`. If a match is found, the diagram node is flagged as impacted.",
+			"cellName": "Impact Analysis Logic",
+			"cellId": "8b5c5360-3ac4-41aa-a41a-a0f29b2e4d6d",
+			"visible": true,
+			"startLine": 85,
+			"endLine": 100,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How impact analysis on diagram nodes works",
+					"simStepId": "8f646122-1854-4ac9-a827-52599e2f34d0"
+				}
+			]
+		},
+		"23a6161e-4891-4e7b-b738-d23a6b5c50da": {
+			"path": "23a6161e-4891-4e7b-b738-d23a6b5c50da",
+			"cellName": "Generate Impact Report",
+			"cellId": "23a6161e-4891-4e7b-b738-d23a6b5c50da",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"main/checkLogic.mjs-simstep-ef3f4a07-f1d3-4625-ba09-48b92cb7eb0a": {
+			"path": "main/checkLogic.mjs-simstep-ef3f4a07-f1d3-4625-ba09-48b92cb7eb0a",
+			"fileName": "checkLogic.mjs",
+			"wiki": "Constructs a markdown summary based on the impact analysis. It determines if action is required and formats the message listing all impacted diagram nodes.",
+			"cellName": "Generate Impact Report",
+			"cellId": "23a6161e-4891-4e7b-b738-d23a6b5c50da",
+			"visible": true,
+			"startLine": 102,
+			"endLine": 124,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How impact analysis on diagram nodes works",
+					"simStepId": "ef3f4a07-f1d3-4625-ba09-48b92cb7eb0a"
+				}
+			]
+		},
+		"9ce1689d-8833-473b-8abb-80c097b9ad4f": {
+			"path": "9ce1689d-8833-473b-8abb-80c097b9ad4f",
+			"cellName": "Fetch Config\nContent",
+			"cellId": "9ce1689d-8833-473b-8abb-80c097b9ad4f",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-01de7213-167b-4a50-95c1-9438aa14878b-9ce1689d-8833-473b-8abb-80c097b9ad4f": {
+			"path": "generated-edge-simstep-01de7213-167b-4a50-95c1-9438aa14878b-9ce1689d-8833-473b-8abb-80c097b9ad4f",
+			"fileName": "checkLogic.mjs",
+			"cellName": "Fetch Config Content",
+			"cellId": "9ce1689d-8833-473b-8abb-80c097b9ad4f",
+			"visible": true,
+			"startLine": 1,
+			"endLine": 1,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How impact analysis on diagram nodes works",
+					"simStepId": "01de7213-167b-4a50-95c1-9438aa14878b"
+				}
+			]
+		},
+		"48cd42ad-d55e-47ba-99cf-58f639eefe34": {
+			"path": "48cd42ad-d55e-47ba-99cf-58f639eefe34",
+			"cellName": "Fetch Changed\nFiles",
+			"cellId": "48cd42ad-d55e-47ba-99cf-58f639eefe34",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-3e97681c-6a2f-4ca9-8297-305d8e1cf528-48cd42ad-d55e-47ba-99cf-58f639eefe34": {
+			"path": "generated-edge-simstep-3e97681c-6a2f-4ca9-8297-305d8e1cf528-48cd42ad-d55e-47ba-99cf-58f639eefe34",
+			"fileName": "checkLogic.mjs",
+			"cellName": "Fetch Changed Files",
+			"cellId": "48cd42ad-d55e-47ba-99cf-58f639eefe34",
+			"visible": true,
+			"startLine": 77,
+			"endLine": 81,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How impact analysis on diagram nodes works",
+					"simStepId": "3e97681c-6a2f-4ca9-8297-305d8e1cf528"
+				}
+			]
+		},
+		"687405b4-61ec-459f-974a-8b2c9b2ddde7": {
+			"path": "687405b4-61ec-459f-974a-8b2c9b2ddde7",
+			"cellName": "Data Transfer\nto Analysis\nLoop",
+			"cellId": "687405b4-61ec-459f-974a-8b2c9b2ddde7",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-dd102807-3343-4323-86d7-d1501ef8509b-687405b4-61ec-459f-974a-8b2c9b2ddde7": {
+			"path": "generated-edge-simstep-dd102807-3343-4323-86d7-d1501ef8509b-687405b4-61ec-459f-974a-8b2c9b2ddde7",
+			"fileName": "checkLogic.mjs",
+			"cellName": "Data Transfer to Analysis Loop",
+			"cellId": "687405b4-61ec-459f-974a-8b2c9b2ddde7",
+			"visible": true,
+			"startLine": 85,
+			"endLine": 85,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How impact analysis on diagram nodes works",
+					"simStepId": "dd102807-3343-4323-86d7-d1501ef8509b"
+				}
+			]
+		},
+		"9680018e-e991-4aae-b9ce-7a26792b8147": {
+			"path": "9680018e-e991-4aae-b9ce-7a26792b8147",
+			"cellName": "Transfer Analysis\nFeedback",
+			"cellId": "9680018e-e991-4aae-b9ce-7a26792b8147",
+			"visible": true,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359"
+		},
+		"generated-edge-simstep-145e4543-ec84-4165-ad43-a6ea6adbe618-9680018e-e991-4aae-b9ce-7a26792b8147": {
+			"path": "generated-edge-simstep-145e4543-ec84-4165-ad43-a6ea6adbe618-9680018e-e991-4aae-b9ce-7a26792b8147",
+			"fileName": "checkLogic.mjs",
+			"cellName": "Transfer Analysis Feedback",
+			"cellId": "9680018e-e991-4aae-b9ce-7a26792b8147",
+			"visible": true,
+			"startLine": 102,
+			"endLine": 102,
+			"parentCellId": "0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359",
+			"parentPath": "main/checkLogic.mjs",
+			"simSteps": [
+				{
+					"simulationKey": "How impact analysis on diagram nodes works",
+					"simStepId": "145e4543-ec84-4165-ad43-a6ea6adbe618"
+				}
+			]
+		}
+	},
+	"simulations": {
+		"How CodeCanvas configuration detection works": {
+			"name": "How CodeCanvas configuration detection works",
+			"simSteps": [
+				{
+					"simStepId": "a2706fe2-b122-46de-a6ab-a2857735bcab",
+					"diagramNodeId": "38ae05a2-03e9-4ddb-be79-116e7011439f",
+					"simStepLabel": "Workflow Trigger Configuration",
+					"simStepDescription": "The process initiates when a Pull Request is opened, synchronized, or reopened. This configuration defines the entry point for the automation in the GitHub Actions workflow.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": ".github/workflows/codecanvas.yml",
+						"startLine": "3",
+						"endLine": "8",
+						"relevantVariables": [
+							"pull_request",
+							"types"
+						]
+					},
+					"inputDataExample": "{\"ref\": \"refs/pull/1/merge\", \"repository\": {\"full_name\": \"Abdulnaser97/CodeCanvasScanner\"}, \"event_name\": \"pull_request\"}",
+					"outputDataExample": "{\"job_id\": \"check_files\", \"status\": \"queued\"}"
+				},
+				{
+					"simStepId": "e1dd89e4-92bf-4c8c-bea9-4f8d6b69b2aa",
+					"diagramNodeId": "e3480b7c-44f7-4f95-a3b0-647481a47fd9",
+					"simStepLabel": "Workflow Job Execution",
+					"simStepDescription": "The GitHub Actions runner picks up the job, installs dependencies, and executes the Node.js script `checkLogic.js`. It passes critical context like the GitHub Token and Event Path as environment variables.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": ".github/workflows/codecanvas.yml",
+						"startLine": "22",
+						"endLine": "28",
+						"relevantVariables": [
+							"checkLogic.js",
+							"GITHUB_TOKEN",
+							"GITHUB_EVENT_PATH"
+						]
+					},
+					"inputDataExample": "{\"GITHUB_TOKEN\": \"ghs_...\", \"GITHUB_EVENT_PATH\": \"/github/workflow/event.json\", \"GITHUB_REPOSITORY\": \"Abdulnaser97/CodeCanvasScanner\"}",
+					"outputDataExample": "{\"GITHUB_TOKEN\": \"ghs_...\", \"GITHUB_EVENT_PATH\": \"/github/workflow/event.json\", \"GITHUB_REPOSITORY\": \"Abdulnaser97/CodeCanvasScanner\"}"
+				},
+				{
+					"simStepId": "c5a2fb94-943b-4e96-bd5a-ef5b08c395b4",
+					"diagramNodeId": "6428b14a-3845-4626-a130-1548bc0732c0",
+					"simStepLabel": "Script Initialization & Payload Parsing",
+					"simStepDescription": "The script initializes the Octokit client and reads the GitHub event payload from the filesystem to extract the Pull Request number and the HEAD SHA.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "4",
+						"endLine": "12",
+						"relevantVariables": [
+							"octokit",
+							"eventPayload",
+							"sha"
+						]
+					},
+					"inputDataExample": "{\"number\": 42, \"pull_request\": {\"head\": {\"sha\": \"6dcb09b5b57875f334f61aebed695e2e4193db5e\", \"ref\": \"feature-branch\"}}}",
+					"outputDataExample": "{\"owner\": \"Abdulnaser97\", \"repo\": \"CodeCanvasScanner\", \"prNumber\": 42, \"sha\": \"6dcb09b5b57875f334f61aebed695e2e4193db5e\"}"
+				},
+				{
+					"simStepId": "d9b8b423-5687-411b-8601-45bd3b998117",
+					"diagramNodeId": "1207e5ac-059f-4418-b9a8-bef0e7238952",
+					"simStepLabel": "API Request: Fetch Git Tree",
+					"simStepDescription": "The script sends a request to the GitHub API to retrieve the full file tree of the repository at the specific commit SHA to locate configuration files.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "16",
+						"endLine": "21",
+						"relevantVariables": [
+							"octokit.rest.git.getTree"
+						]
+					},
+					"inputDataExample": "{\"owner\": \"Abdulnaser97\", \"repo\": \"CodeCanvasScanner\", \"tree_sha\": \"6dcb09b5b57875f334f61aebed695e2e4193db5e\", \"recursive\": \"1\"}",
+					"outputDataExample": "{\"owner\": \"Abdulnaser97\", \"repo\": \"CodeCanvasScanner\", \"tree_sha\": \"6dcb09b5b57875f334f61aebed695e2e4193db5e\", \"recursive\": \"1\"}"
+				},
+				{
+					"simStepId": "a9550ad2-f637-4188-b30c-cc435a60ca8d",
+					"diagramNodeId": "400fc665-74f4-40c5-8a78-8d4b77e5f51b",
+					"simStepLabel": "GitHub API (External)",
+					"simStepDescription": "The GitHub API processes the request and retrieves the Git tree structure for the specified SHA. (Represented here by the client interface point).",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "16",
+						"endLine": "21",
+						"relevantVariables": [
+							"octokit"
+						]
+					},
+					"inputDataExample": "{\"method\": \"GET\", \"url\": \"/repos/Abdulnaser97/CodeCanvasScanner/git/trees/6dcb09b5b57875f334f61aebed695e2e4193db5e?recursive=1\"}",
+					"outputDataExample": "{\"sha\": \"6dcb09b5b57875f334f61aebed695e2e4193db5e\", \"tree\": [{\"path\": \"src/main.CodeCanvas\", \"mode\": \"100644\", \"type\": \"blob\", \"sha\": \"7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\"}]}"
+				},
+				{
+					"simStepId": "877c911e-9fc5-4060-ad63-a601393c0383",
+					"diagramNodeId": "65aa895d-2e1e-451d-b27e-339be095e13c",
+					"simStepLabel": "API Response: Git Tree Data",
+					"simStepDescription": "The GitHub API returns the tree data containing metadata about files in the repository, including paths and SHAs.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "16",
+						"endLine": "21",
+						"relevantVariables": [
+							"data",
+							"tree"
+						]
+					},
+					"inputDataExample": "{\"tree\": [{\"path\": \"README.md\", \"type\": \"blob\"}, {\"path\": \"diagram.CodeCanvas\", \"type\": \"blob\", \"sha\": \"7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\"}]}",
+					"outputDataExample": "{\"tree\": [{\"path\": \"README.md\", \"type\": \"blob\"}, {\"path\": \"diagram.CodeCanvas\", \"type\": \"blob\", \"sha\": \"7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\"}]}"
+				},
+				{
+					"simStepId": "44dd0524-379f-4ac8-9e0b-634f320ba452",
+					"diagramNodeId": "29389299-573f-4ea1-9964-67192e1dd139",
+					"simStepLabel": "Configuration File Detection",
+					"simStepDescription": "The script iterates through the file list to find a file ending with `.CodeCanvas`. If found, it extracts the file's SHA for content retrieval.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "23",
+						"endLine": "32",
+						"relevantVariables": [
+							"codeCanvasFile",
+							"find"
+						]
+					},
+					"inputDataExample": "[{\"path\": \"src/index.js\"}, {\"path\": \"project.CodeCanvas\", \"sha\": \"7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\"}]",
+					"outputDataExample": "{\"path\": \"project.CodeCanvas\", \"mode\": \"100644\", \"type\": \"blob\", \"sha\": \"7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\"}"
+				},
+				{
+					"simStepId": "e44706ad-198c-42a6-9126-20a181ae503f",
+					"diagramNodeId": "eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca",
+					"simStepLabel": "API Request: Fetch File Blob",
+					"simStepDescription": "Using the SHA extracted from the previous step, the script requests the actual content (blob) of the `.CodeCanvas` configuration file.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "35",
+						"endLine": "39",
+						"relevantVariables": [
+							"octokit.rest.git.getBlob",
+							"codeCanvasFile"
+						]
+					},
+					"inputDataExample": "{\"owner\": \"Abdulnaser97\", \"repo\": \"CodeCanvasScanner\", \"file_sha\": \"7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\"}",
+					"outputDataExample": "{\"owner\": \"Abdulnaser97\", \"repo\": \"CodeCanvasScanner\", \"file_sha\": \"7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\"}"
+				},
+				{
+					"simStepId": "8e47f869-b001-4b1b-8c87-76f192b49e1f",
+					"diagramNodeId": "5c9f1f62-d334-463a-b84a-9f902213bbb9",
+					"simStepLabel": "GitHub API (External)",
+					"simStepDescription": "The GitHub API locates the blob object by SHA and returns its content, usually Base64 encoded.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "35",
+						"endLine": "39",
+						"relevantVariables": [
+							"octokit"
+						]
+					},
+					"inputDataExample": "{\"file_sha\": \"7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\"}",
+					"outputDataExample": "{\"sha\": \"7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\", \"content\": \"eyJyZXBvRGF0YSI6IHsgImZpbGUxLmpzIjogeyAiY2VsbElkIjogIjEwMSIgfSB9IH0=\", \"encoding\": \"base64\"}"
+				},
+				{
+					"simStepId": "d1f9ebe8-362a-41f0-b128-89a1c045ef71",
+					"diagramNodeId": "b0978890-8088-447a-a0d1-51d3422f29bb",
+					"simStepLabel": "API Response: Blob Content",
+					"simStepDescription": "The GitHub API returns the Base64 encoded content of the configuration file to the script.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "35",
+						"endLine": "39",
+						"relevantVariables": [
+							"fileContent",
+							"data"
+						]
+					},
+					"inputDataExample": "{\"content\": \"eyJyZXBvRGF0YSI6IHsgImZpbGUxLmpzIjogeyAiY2VsbElkIjogIjEwMSIgfSB9IH0=\", \"encoding\": \"base64\"}",
+					"outputDataExample": "{\"content\": \"eyJyZXBvRGF0YSI6IHsgImZpbGUxLmpzIjogeyAiY2VsbElkIjogIjEwMSIgfSB9IH0=\", \"encoding\": \"base64\"}"
+				},
+				{
+					"simStepId": "3bd54aa5-8c1d-4bf3-bc19-235341cefcf2",
+					"diagramNodeId": "3bc0148b-174c-43ce-83f5-d0ea5a8db4b9",
+					"simStepLabel": "Data Parsing & Configuration Load",
+					"simStepDescription": "The script decodes the Base64 content and parses it into a JSON object to access the `repoData` and `lastReviewedSHA` properties for further processing.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "41",
+						"endLine": "43",
+						"relevantVariables": [
+							"codeCanvasJson",
+							"JSON.parse",
+							"Buffer.from"
+						]
+					},
+					"inputDataExample": "{\"content\": \"eyJyZXBvRGF0YSI6IHsgImZpbGUxLmpzIjogeyAiY2VsbElkIjogIjEwMSIgfSB9IH0=\", \"encoding\": \"base64\"}",
+					"outputDataExample": "{\"repoData\": {\"file1.js\": {\"cellId\": \"101\"}}, \"lastReviewedSHA\": \"a1b2c3d4e5f6...\"}"
+				}
+			],
+			"description": "<ul><li>The system connects to the repository using the GitHub API to inspect the file tree at the specific commit SHA of the Pull Request</li><li>It searches for a configuration file ending in <code></li><li>CodeCanvas</code> in the root directory to retrieve necessary metadata and diagram mappings</li></ul>",
+			"simulationNodesAndEdges": {
+				"38ae05a2-03e9-4ddb-be79-116e7011439f": {
+					"simStepIds": [
+						"a2706fe2-b122-46de-a6ab-a2857735bcab"
+					]
+				},
+				"6428b14a-3845-4626-a130-1548bc0732c0": {
+					"simStepIds": [
+						"c5a2fb94-943b-4e96-bd5a-ef5b08c395b4"
+					]
+				},
+				"400fc665-74f4-40c5-8a78-8d4b77e5f51b": {
+					"simStepIds": [
+						"a9550ad2-f637-4188-b30c-cc435a60ca8d"
+					]
+				},
+				"29389299-573f-4ea1-9964-67192e1dd139": {
+					"simStepIds": [
+						"44dd0524-379f-4ac8-9e0b-634f320ba452"
+					]
+				},
+				"5c9f1f62-d334-463a-b84a-9f902213bbb9": {
+					"simStepIds": [
+						"8e47f869-b001-4b1b-8c87-76f192b49e1f"
+					]
+				},
+				"3bc0148b-174c-43ce-83f5-d0ea5a8db4b9": {
+					"simStepIds": [
+						"3bd54aa5-8c1d-4bf3-bc19-235341cefcf2"
+					]
+				},
+				"e3480b7c-44f7-4f95-a3b0-647481a47fd9": {
+					"simStepIds": [
+						"e1dd89e4-92bf-4c8c-bea9-4f8d6b69b2aa"
+					]
+				},
+				"1207e5ac-059f-4418-b9a8-bef0e7238952": {
+					"simStepIds": [
+						"d9b8b423-5687-411b-8601-45bd3b998117"
+					]
+				},
+				"65aa895d-2e1e-451d-b27e-339be095e13c": {
+					"simStepIds": [
+						"877c911e-9fc5-4060-ad63-a601393c0383"
+					]
+				},
+				"eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca": {
+					"simStepIds": [
+						"e44706ad-198c-42a6-9126-20a181ae503f"
+					]
+				},
+				"b0978890-8088-447a-a0d1-51d3422f29bb": {
+					"simStepIds": [
+						"d1f9ebe8-362a-41f0-b128-89a1c045ef71"
+					]
+				}
+			},
+			"isAIGenerated": true,
+			"keywords": "CodeCanvas, octokit.rest.git.getTree, codeCanvasFile, getBlob, JSON.parse",
+			"generationPrompt": "How CodeCanvas configuration detection works",
+			"generationKeywords": "CodeCanvas, octokit.rest.git.getTree, codeCanvasFile, getBlob, JSON.parse",
+			"meta": {
+				"containerCoverage": {
+					"perContainerTotals": {
+						"frontend": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 0
+						},
+						"server": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 0
+						},
+						"drawio": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 1
+						},
+						"shared": {
+							"promptFileCount": 1,
+							"promptTokenCount": 1084,
+							"suggestedFileCount": 1
+						},
+						"unknown": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 0
+						}
+					},
+					"missingContainers": [],
+					"addedFiles": []
+				}
+			}
+		},
+		"How pull request file change analysis works": {
+			"name": "How pull request file change analysis works",
+			"simSteps": [
+				{
+					"simStepId": "41f42922-bb0d-4df4-9589-c2198a543fcb",
+					"diagramNodeId": "d713f462-f211-4983-9bc9-8efeb8522021",
+					"simStepLabel": "Configuration & Payload Parsing",
+					"simStepDescription": "The script begins by reading the GitHub event payload from the file system to retrieve the Pull Request number and the commit SHA. This establishes the context for the analysis.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "7",
+						"endLine": "12",
+						"relevantVariables": [
+							"eventPayload",
+							"prNumber",
+							"sha"
+						]
+					},
+					"inputDataExample": "{\"GITHUB_EVENT_PATH\": \"/github/workflow/event.json\"}",
+					"outputDataExample": "{\"prNumber\": 42, \"sha\": \"8f9d1234567890abcdef1234567890abcdef12\"}"
+				},
+				{
+					"simStepId": "e5c287a7-1691-4298-bbe1-b82cc2c9a7b7",
+					"diagramNodeId": "e2f0a150-8f53-4bdc-b085-0e87cbe3d776",
+					"simStepLabel": "API Request: List Files",
+					"simStepDescription": "The system calls the GitHub API `listFiles` endpoint using the extracted PR number to identify all files modified in this Pull Request.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "77",
+						"endLine": "81",
+						"relevantVariables": [
+							"octokit",
+							"listFiles"
+						]
+					},
+					"inputDataExample": "{\"owner\": \"my-org\", \"repo\": \"my-repo\", \"pull_number\": 42}",
+					"outputDataExample": "{\"owner\": \"my-org\", \"repo\": \"my-repo\", \"pull_number\": 42}"
+				},
+				{
+					"simStepId": "eb46fa64-892d-43f6-84e2-bc3e92ee9208",
+					"diagramNodeId": "d89c211e-eef0-43ca-923c-d821a6804bb3",
+					"simStepLabel": "GitHub API Service",
+					"simStepDescription": "The external GitHub API processes the request, querying the repository's pull request data to find the diff and identify changed files.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "77",
+						"endLine": "81",
+						"relevantVariables": []
+					},
+					"inputDataExample": "{\"owner\": \"my-org\", \"repo\": \"my-repo\", \"pull_number\": 42}",
+					"outputDataExample": "{\"data\": [{\"filename\": \"src/components/Button.js\", \"status\": \"modified\"}, {\"filename\": \"src/utils/helper.js\", \"status\": \"added\"}]}"
+				},
+				{
+					"simStepId": "9894d963-27b1-42e1-a0c7-af157b755011",
+					"diagramNodeId": "e9bf1e27-8c26-49ba-8e2e-afc54e522257",
+					"simStepLabel": "API Response: Changed Files",
+					"simStepDescription": "The GitHub API returns the list of file objects that have been added, modified, or deleted in the PR.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "77",
+						"endLine": "81",
+						"relevantVariables": [
+							"filesChanged"
+						]
+					},
+					"inputDataExample": "{\"data\": [{\"filename\": \"src/components/Button.js\", \"status\": \"modified\"}, {\"filename\": \"src/utils/helper.js\", \"status\": \"added\"}]}",
+					"outputDataExample": "{\"data\": [{\"filename\": \"src/components/Button.js\", \"status\": \"modified\"}, {\"filename\": \"src/utils/helper.js\", \"status\": \"added\"}]}"
+				},
+				{
+					"simStepId": "a3d5faf0-9bf5-42e5-8ad3-208dfb13400b",
+					"diagramNodeId": "e92017ae-e113-460f-b973-63bf053c0ab0",
+					"simStepLabel": "Extract Filenames",
+					"simStepDescription": "The raw file objects from the API are mapped to a simple array of file paths (strings) for easier processing during the matching phase.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "83",
+						"endLine": "84",
+						"relevantVariables": [
+							"changedFiles",
+							"filesChanged"
+						]
+					},
+					"inputDataExample": "[{\"filename\": \"src/components/Button.js\", \"status\": \"modified\"}, {\"filename\": \"src/utils/helper.js\", \"status\": \"added\"}]",
+					"outputDataExample": "[\"src/components/Button.js\", \"src/utils/helper.js\"]"
+				},
+				{
+					"simStepId": "2a21250b-798b-4ec3-a384-4a669cbeca85",
+					"diagramNodeId": "f09d70e1-f04c-446e-b409-fbde706585f9",
+					"simStepLabel": "Data Flow to Matching Logic",
+					"simStepDescription": "The simplified list of changed filenames is passed into the analysis loop to be cross-referenced against the repository's diagram data.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "85",
+						"endLine": "85",
+						"relevantVariables": [
+							"changedFiles"
+						]
+					},
+					"inputDataExample": "{\"changedFiles\": [\"src/components/Button.js\", \"src/utils/helper.js\"]}",
+					"outputDataExample": "{\"changedFiles\": [\"src/components/Button.js\", \"src/utils/helper.js\"]}"
+				},
+				{
+					"simStepId": "69af68df-ec1e-4385-8484-7f6db655a5ac",
+					"diagramNodeId": "91bfc001-c8be-45c4-9a7e-94162b0001e7",
+					"simStepLabel": "Cross-Reference Analysis",
+					"simStepDescription": "The system iterates through the repository data (diagram nodes) and checks if any changed file matches a diagram entry's path or parent path. Matches are recorded in the feedback object.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "85",
+						"endLine": "91",
+						"relevantVariables": [
+							"repoData",
+							"changedFiles",
+							"feedback",
+							"entry"
+						]
+					},
+					"inputDataExample": "{\"changedFiles\": [\"src/components/Button.js\"], \"repoData\": {\"node1\": {\"path\": \"src/components/Button.js\", \"cellId\": \"cell_123\", \"cellName\": \"Auth Button\"}}}",
+					"outputDataExample": "{\"feedback\": {\"files\": [{\"path\": \"src/components/Button.js\", \"cellId\": \"cell_123\", \"cellName\": \"Auth Button\"}]}}"
+				}
+			],
+			"description": "<ul><li>The scanner identifies exactly which files have been modified in the current Pull Request by querying the GitHub API</li><li>This list of changed filenames is extracted and prepared for cross-referencing against the diagram's data</li></ul>",
+			"simulationNodesAndEdges": {
+				"d713f462-f211-4983-9bc9-8efeb8522021": {
+					"simStepIds": [
+						"41f42922-bb0d-4df4-9589-c2198a543fcb"
+					]
+				},
+				"d89c211e-eef0-43ca-923c-d821a6804bb3": {
+					"simStepIds": [
+						"eb46fa64-892d-43f6-84e2-bc3e92ee9208"
+					]
+				},
+				"e92017ae-e113-460f-b973-63bf053c0ab0": {
+					"simStepIds": [
+						"a3d5faf0-9bf5-42e5-8ad3-208dfb13400b"
+					]
+				},
+				"91bfc001-c8be-45c4-9a7e-94162b0001e7": {
+					"simStepIds": [
+						"69af68df-ec1e-4385-8484-7f6db655a5ac"
+					]
+				},
+				"e2f0a150-8f53-4bdc-b085-0e87cbe3d776": {
+					"simStepIds": [
+						"e5c287a7-1691-4298-bbe1-b82cc2c9a7b7"
+					]
+				},
+				"e9bf1e27-8c26-49ba-8e2e-afc54e522257": {
+					"simStepIds": [
+						"9894d963-27b1-42e1-a0c7-af157b755011"
+					]
+				},
+				"f09d70e1-f04c-446e-b409-fbde706585f9": {
+					"simStepIds": [
+						"2a21250b-798b-4ec3-a384-4a669cbeca85"
+					]
+				}
+			},
+			"isAIGenerated": true,
+			"keywords": "octokit.rest.pulls.listFiles, prNumber, changedFiles, filename, filesChanged",
+			"generationPrompt": "How pull request file change analysis works",
+			"generationKeywords": "octokit.rest.pulls.listFiles, prNumber, changedFiles, filename, filesChanged",
+			"meta": {
+				"containerCoverage": {
+					"perContainerTotals": {
+						"frontend": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 0
+						},
+						"server": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 0
+						},
+						"drawio": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 1
+						},
+						"shared": {
+							"promptFileCount": 1,
+							"promptTokenCount": 428,
+							"suggestedFileCount": 1
+						},
+						"unknown": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 0
+						}
+					},
+					"missingContainers": [],
+					"addedFiles": []
+				}
+			}
+		},
+		"How impact analysis on diagram nodes works": {
+			"name": "How impact analysis on diagram nodes works",
+			"simSteps": [
+				{
+					"simStepId": "db115145-d424-4da9-bbd2-122efd4d5549",
+					"diagramNodeId": "ea65605f-bc18-40ba-b1be-50759037cfe6",
+					"simStepLabel": "Initialize and Locate Config",
+					"simStepDescription": "The process begins by reading the GitHub event payload and querying the git tree to locate the `.CodeCanvas` configuration file.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "1",
+						"endLine": "1",
+						"relevantVariables": [
+							"eventPayload",
+							"sha",
+							"octokit",
+							"tree",
+							"codeCanvasFile"
+						]
+					},
+					"inputDataExample": "{\"number\": 42, \"pull_request\": {\"head\": {\"sha\": \"a1b2c3d4\"}}}",
+					"outputDataExample": "{\"path\": \".CodeCanvas\", \"sha\": \"e5f6g7h8\", \"type\": \"blob\"}"
+				},
+				{
+					"simStepId": "01de7213-167b-4a50-95c1-9438aa14878b",
+					"diagramNodeId": "9ce1689d-8833-473b-8abb-80c097b9ad4f",
+					"simStepLabel": "Fetch Config Content",
+					"simStepDescription": "Performs an API call to GitHub to retrieve the content of the identified `.CodeCanvas` file.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "1",
+						"endLine": "1",
+						"relevantVariables": [
+							"octokit",
+							"codeCanvasFile"
+						]
+					},
+					"inputDataExample": "{\"owner\": \"my-org\", \"repo\": \"my-repo\", \"file_sha\": \"e5f6g7h8\"}",
+					"outputDataExample": "{\"owner\": \"my-org\", \"repo\": \"my-repo\", \"file_sha\": \"e5f6g7h8\"}"
+				},
+				{
+					"simStepId": "d949ceab-f7da-440c-99a2-90c70a2658e9",
+					"diagramNodeId": "31daedae-d337-4fe1-9f09-525f141369bc",
+					"simStepLabel": "Parse Configuration Data",
+					"simStepDescription": "Decodes the file content from base64 and parses it into a JSON object to extract `repoData`, which contains the mapping between diagram nodes and file paths.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "70",
+						"endLine": "122",
+						"relevantVariables": [
+							"codeCanvasJson",
+							"repoData",
+							"Buffer"
+						]
+					},
+					"inputDataExample": "{\"content\": \"eyJyZXBvRGF0YSI6IHsgImNlbGxfMSI6IHsgInBhdGgiOiAic3JjL2FwaS5qcyIsICJjZWxsSWQiOiAiY2VsbF8xIn19fQ==\", \"encoding\": \"base64\"}",
+					"outputDataExample": "{\"cell_1\": {\"path\": \"src/api.js\", \"parentPath\": \"src\", \"cellId\": \"cell_1\", \"cellName\": \"API Module\"}}"
+				},
+				{
+					"simStepId": "3e97681c-6a2f-4ca9-8297-305d8e1cf528",
+					"diagramNodeId": "48cd42ad-d55e-47ba-99cf-58f639eefe34",
+					"simStepLabel": "Fetch Changed Files",
+					"simStepDescription": "Makes an API call to GitHub to list all files that have been modified in the current Pull Request.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "77",
+						"endLine": "81",
+						"relevantVariables": [
+							"octokit",
+							"prNumber"
+						]
+					},
+					"inputDataExample": "{\"owner\": \"my-org\", \"repo\": \"my-repo\", \"pull_number\": 42}",
+					"outputDataExample": "{\"owner\": \"my-org\", \"repo\": \"my-repo\", \"pull_number\": 42}"
+				},
+				{
+					"simStepId": "b15e5b5b-4d48-41ee-8dcd-31a6c5fa91e2",
+					"diagramNodeId": "d356a462-6b5b-4507-a2da-5beb54fa4455",
+					"simStepLabel": "Normalize File List",
+					"simStepDescription": "Extracts just the filenames from the detailed file objects returned by the API to create a simple list of changed paths.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "83",
+						"endLine": "84",
+						"relevantVariables": [
+							"filesChanged",
+							"changedFiles"
+						]
+					},
+					"inputDataExample": "[{\"filename\": \"src/api.js\", \"status\": \"modified\"}, {\"filename\": \"README.md\", \"status\": \"added\"}]",
+					"outputDataExample": "[\"src/api.js\", \"README.md\"]"
+				},
+				{
+					"simStepId": "dd102807-3343-4323-86d7-d1501ef8509b",
+					"diagramNodeId": "687405b4-61ec-459f-974a-8b2c9b2ddde7",
+					"simStepLabel": "Data Transfer to Analysis Loop",
+					"simStepDescription": "Passes the configuration data and the list of changed files into the main analysis loop.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "85",
+						"endLine": "85",
+						"relevantVariables": [
+							"repoData",
+							"changedFiles"
+						]
+					},
+					"inputDataExample": "{\"repoData\": {\"key\": \"val\"}, \"changedFiles\": [\"src/api.js\"]}",
+					"outputDataExample": "{\"repoData\": {\"key\": \"val\"}, \"changedFiles\": [\"src/api.js\"]}"
+				},
+				{
+					"simStepId": "8f646122-1854-4ac9-a827-52599e2f34d0",
+					"diagramNodeId": "8b5c5360-3ac4-41aa-a41a-a0f29b2e4d6d",
+					"simStepLabel": "Impact Analysis Logic",
+					"simStepDescription": "Iterates through each entry in `repoData`. It checks if any changed file matches the entry's `path` or `parentPath`. If a match is found, the diagram node is flagged as impacted.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "85",
+						"endLine": "100",
+						"relevantVariables": [
+							"entry",
+							"file",
+							"feedback",
+							"includes"
+						]
+					},
+					"inputDataExample": "{\"repoDataEntry\": {\"path\": \"src/api.js\", \"cellId\": \"cell_1\"}, \"changedFile\": \"src/api.js\"}",
+					"outputDataExample": "{\"path\": \"src/api.js\", \"cellId\": \"cell_1\", \"cellName\": \"API Module\"}"
+				},
+				{
+					"simStepId": "145e4543-ec84-4165-ad43-a6ea6adbe618",
+					"diagramNodeId": "9680018e-e991-4aae-b9ce-7a26792b8147",
+					"simStepLabel": "Transfer Analysis Feedback",
+					"simStepDescription": "The accumulated list of impacted files is passed to the summary generation logic.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "102",
+						"endLine": "102",
+						"relevantVariables": [
+							"feedback"
+						]
+					},
+					"inputDataExample": "{\"files\": [{\"path\": \"src/api.js\", \"cellId\": \"cell_1\"}]}",
+					"outputDataExample": "{\"files\": [{\"path\": \"src/api.js\", \"cellId\": \"cell_1\"}]}"
+				},
+				{
+					"simStepId": "ef3f4a07-f1d3-4625-ba09-48b92cb7eb0a",
+					"diagramNodeId": "23a6161e-4891-4e7b-b738-d23a6b5c50da",
+					"simStepLabel": "Generate Impact Report",
+					"simStepDescription": "Constructs a markdown summary based on the impact analysis. It determines if action is required and formats the message listing all impacted diagram nodes.",
+					"isEdge": 0,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "102",
+						"endLine": "124",
+						"relevantVariables": [
+							"action_required",
+							"summary",
+							"title",
+							"conclusion"
+						]
+					},
+					"inputDataExample": "{\"files\": [{\"cellId\": \"cell_1\", \"cellName\": \"API Module\"}]}",
+					"outputDataExample": "### The following CodeCanvas diagram nodes might be impacted... **Cell ID:** cell_1..."
+				},
+				{
+					"simStepId": "a5c32bd4-1cf8-4599-af9b-8c2bf780fa4b",
+					"diagramNodeId": "",
+					"simStepLabel": "Publish Results to GitHub",
+					"simStepDescription": "Sends the final report, status, and conclusion back to GitHub by updating the Check Run.",
+					"isEdge": 1,
+					"sourceCodeMapping": {
+						"filePath": "main/checkLogic.mjs",
+						"startLine": "70",
+						"endLine": "122",
+						"relevantVariables": [
+							"octokit",
+							"checkRunId",
+							"conclusion",
+							"summary"
+						]
+					},
+					"inputDataExample": "{\"status\": \"completed\", \"conclusion\": \"action_required\", \"output\": {\"title\": \"1 files need update\", \"summary\": \"...\"}}",
+					"outputDataExample": "{\"status\": \"completed\", \"conclusion\": \"action_required\", \"output\": {\"title\": \"1 files need update\", \"summary\": \"...\"}}"
+				}
+			],
+			"description": "<ul><li>The system iterates through the <code>repoData</code> object found in the CodeCanvas configuration file</li><li>It compares the paths of the changed files against the tracked paths and parent paths of diagram nodes (cells) to determine if any visual elements are outdated</li></ul>",
+			"simulationNodesAndEdges": {
+				"ea65605f-bc18-40ba-b1be-50759037cfe6": {
+					"simStepIds": [
+						"db115145-d424-4da9-bbd2-122efd4d5549"
+					]
+				},
+				"31daedae-d337-4fe1-9f09-525f141369bc": {
+					"simStepIds": [
+						"d949ceab-f7da-440c-99a2-90c70a2658e9"
+					]
+				},
+				"d356a462-6b5b-4507-a2da-5beb54fa4455": {
+					"simStepIds": [
+						"b15e5b5b-4d48-41ee-8dcd-31a6c5fa91e2"
+					]
+				},
+				"8b5c5360-3ac4-41aa-a41a-a0f29b2e4d6d": {
+					"simStepIds": [
+						"8f646122-1854-4ac9-a827-52599e2f34d0"
+					]
+				},
+				"23a6161e-4891-4e7b-b738-d23a6b5c50da": {
+					"simStepIds": [
+						"ef3f4a07-f1d3-4625-ba09-48b92cb7eb0a"
+					]
+				},
+				"9ce1689d-8833-473b-8abb-80c097b9ad4f": {
+					"simStepIds": [
+						"01de7213-167b-4a50-95c1-9438aa14878b"
+					]
+				},
+				"48cd42ad-d55e-47ba-99cf-58f639eefe34": {
+					"simStepIds": [
+						"3e97681c-6a2f-4ca9-8297-305d8e1cf528"
+					]
+				},
+				"687405b4-61ec-459f-974a-8b2c9b2ddde7": {
+					"simStepIds": [
+						"dd102807-3343-4323-86d7-d1501ef8509b"
+					]
+				},
+				"9680018e-e991-4aae-b9ce-7a26792b8147": {
+					"simStepIds": [
+						"145e4543-ec84-4165-ad43-a6ea6adbe618"
+					]
+				}
+			},
+			"isAIGenerated": true,
+			"keywords": "repoData, entry.path, entry.parentPath, cellId, feedback.files",
+			"generationPrompt": "How impact analysis on diagram nodes works",
+			"generationKeywords": "repoData, entry.path, entry.parentPath, cellId, feedback.files",
+			"meta": {
+				"containerCoverage": {
+					"perContainerTotals": {
+						"frontend": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 0
+						},
+						"server": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 0
+						},
+						"drawio": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 1
+						},
+						"shared": {
+							"promptFileCount": 1,
+							"promptTokenCount": 997,
+							"suggestedFileCount": 1
+						},
+						"unknown": {
+							"promptFileCount": 0,
+							"promptTokenCount": 0,
+							"suggestedFileCount": 0
+						}
+					},
+					"missingContainers": [],
+					"addedFiles": []
+				}
+			}
+		},
+		"How redundant scan optimization works": {
+			"name": "How redundant scan optimization works",
+			"simSteps": [],
+			"description": "<ul><li>To improve efficiency, the script fetches the commit history to compare the <code>lastReviewedSHA</code> stored in the diagram file with the immediate previous commit SHA</li><li>If they match, the scan is skipped as the diagram is deemed up-to-date</li></ul>",
+			"simulationNodesAndEdges": {},
+			"isAIGenerated": true,
+			"keywords": "lastReviewedSHA, secondLastSHA, shaHistory, octokit.rest.repos.listCommits, No need to scan again",
+			"generationPrompt": "How redundant scan optimization works",
+			"generationKeywords": "lastReviewedSHA, secondLastSHA, shaHistory, octokit.rest.repos.listCommits, No need to scan again"
+		},
+		"How GitHub Check Run status reporting works": {
+			"name": "How GitHub Check Run status reporting works",
+			"simSteps": [],
+			"description": "<ul><li>The application creates a GitHub Check Run to report the status of the diagram consistency</li><li>If files mapped to diagram nodes are changed, the check concludes with <code>action_required</code>; otherwise, it concludes with <code>success</code></li></ul>",
+			"simulationNodesAndEdges": {},
+			"isAIGenerated": true,
+			"keywords": "octokit.rest.checks.create, octokit.rest.checks.update, conclusion, action_required, CodeCanvas Scanner",
+			"generationPrompt": "How GitHub Check Run status reporting works",
+			"generationKeywords": "octokit.rest.checks.create, octokit.rest.checks.update, conclusion, action_required, CodeCanvas Scanner"
+		},
+		"How deep link generation for diagram updates works": {
+			"name": "How deep link generation for diagram updates works",
+			"simSteps": [],
+			"description": "<ul><li>A dynamic URL is constructed to guide the user to the CodeCanvas web interface for fixing the diagram</li><li>The URL embeds context such as the repository owner, repo name, branch, SHA, PR URL, and the specific Check Run ID</li></ul>",
+			"simulationNodesAndEdges": {},
+			"isAIGenerated": true,
+			"keywords": "codeCanvasURL, dev.code-canvas.com, prURL, checkRunId, session=github",
+			"generationPrompt": "How deep link generation for diagram updates works",
+			"generationKeywords": "codeCanvasURL, dev.code-canvas.com, prURL, checkRunId, session=github"
+		},
+		"How feedback summary generation works": {
+			"name": "How feedback summary generation works",
+			"simSteps": [],
+			"description": "<ul><li>The system constructs a Markdown-formatted summary string that lists the specific <code>Cell ID</code> and <code>Cell Title</code> of every diagram node impacted by the code changes</li><li>This summary is displayed in the GitHub Check Run output</li></ul>",
+			"simulationNodesAndEdges": {},
+			"isAIGenerated": true,
+			"keywords": "summary, feedback.files, cell Title, Cell ID, impacted by the PR",
+			"generationPrompt": "How feedback summary generation works",
+			"generationKeywords": "summary, feedback.files, cell Title, Cell ID, impacted by the PR"
+		}
+	},
+	"cellToPath": {
+		"66e17324-2488-4b4b-be7e-8f4db6150931": ".github",
+		"14f03f21-60ff-4e33-a3f9-4675229109b6": "main",
+		"109371cf-683b-42f8-aa9f-f1eb61c8e308": ".github/workflows",
+		"0d9ea0f2-e041-4dd5-bf4e-34ef2d9be359": "main/checkLogic.mjs",
+		"953f8d89-5e94-4295-a591-33919f09d844": ".github/workflows/codecanvas.yml",
+		"38ae05a2-03e9-4ddb-be79-116e7011439f": ".github/workflows/codecanvas.yml-simstep-a2706fe2-b122-46de-a6ab-a2857735bcab",
+		"6428b14a-3845-4626-a130-1548bc0732c0": "main/checkLogic.mjs-simstep-c5a2fb94-943b-4e96-bd5a-ef5b08c395b4",
+		"400fc665-74f4-40c5-8a78-8d4b77e5f51b": "main/checkLogic.mjs-simstep-a9550ad2-f637-4188-b30c-cc435a60ca8d",
+		"29389299-573f-4ea1-9964-67192e1dd139": "main/checkLogic.mjs-simstep-44dd0524-379f-4ac8-9e0b-634f320ba452",
+		"5c9f1f62-d334-463a-b84a-9f902213bbb9": "main/checkLogic.mjs-simstep-8e47f869-b001-4b1b-8c87-76f192b49e1f",
+		"3bc0148b-174c-43ce-83f5-d0ea5a8db4b9": "main/checkLogic.mjs-simstep-3bd54aa5-8c1d-4bf3-bc19-235341cefcf2",
+		"e3480b7c-44f7-4f95-a3b0-647481a47fd9": "generated-edge-simstep-e1dd89e4-92bf-4c8c-bea9-4f8d6b69b2aa-e3480b7c-44f7-4f95-a3b0-647481a47fd9",
+		"1207e5ac-059f-4418-b9a8-bef0e7238952": "generated-edge-simstep-d9b8b423-5687-411b-8601-45bd3b998117-1207e5ac-059f-4418-b9a8-bef0e7238952",
+		"65aa895d-2e1e-451d-b27e-339be095e13c": "generated-edge-simstep-877c911e-9fc5-4060-ad63-a601393c0383-65aa895d-2e1e-451d-b27e-339be095e13c",
+		"eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca": "generated-edge-simstep-e44706ad-198c-42a6-9126-20a181ae503f-eadfce2d-18e7-47fc-9cd1-ed1eea3c7eca",
+		"b0978890-8088-447a-a0d1-51d3422f29bb": "generated-edge-simstep-d1f9ebe8-362a-41f0-b128-89a1c045ef71-b0978890-8088-447a-a0d1-51d3422f29bb",
+		"d713f462-f211-4983-9bc9-8efeb8522021": "main/checkLogic.mjs-simstep-41f42922-bb0d-4df4-9589-c2198a543fcb",
+		"d89c211e-eef0-43ca-923c-d821a6804bb3": "main/checkLogic.mjs-simstep-eb46fa64-892d-43f6-84e2-bc3e92ee9208",
+		"e92017ae-e113-460f-b973-63bf053c0ab0": "main/checkLogic.mjs-simstep-a3d5faf0-9bf5-42e5-8ad3-208dfb13400b",
+		"91bfc001-c8be-45c4-9a7e-94162b0001e7": "main/checkLogic.mjs-simstep-69af68df-ec1e-4385-8484-7f6db655a5ac",
+		"e2f0a150-8f53-4bdc-b085-0e87cbe3d776": "generated-edge-simstep-e5c287a7-1691-4298-bbe1-b82cc2c9a7b7-e2f0a150-8f53-4bdc-b085-0e87cbe3d776",
+		"e9bf1e27-8c26-49ba-8e2e-afc54e522257": "generated-edge-simstep-9894d963-27b1-42e1-a0c7-af157b755011-e9bf1e27-8c26-49ba-8e2e-afc54e522257",
+		"f09d70e1-f04c-446e-b409-fbde706585f9": "generated-edge-simstep-2a21250b-798b-4ec3-a384-4a669cbeca85-f09d70e1-f04c-446e-b409-fbde706585f9",
+		"ea65605f-bc18-40ba-b1be-50759037cfe6": "main/checkLogic.mjs-simstep-db115145-d424-4da9-bbd2-122efd4d5549",
+		"31daedae-d337-4fe1-9f09-525f141369bc": "main/checkLogic.mjs-simstep-d949ceab-f7da-440c-99a2-90c70a2658e9",
+		"d356a462-6b5b-4507-a2da-5beb54fa4455": "main/checkLogic.mjs-simstep-b15e5b5b-4d48-41ee-8dcd-31a6c5fa91e2",
+		"8b5c5360-3ac4-41aa-a41a-a0f29b2e4d6d": "main/checkLogic.mjs-simstep-8f646122-1854-4ac9-a827-52599e2f34d0",
+		"23a6161e-4891-4e7b-b738-d23a6b5c50da": "main/checkLogic.mjs-simstep-ef3f4a07-f1d3-4625-ba09-48b92cb7eb0a",
+		"9ce1689d-8833-473b-8abb-80c097b9ad4f": "generated-edge-simstep-01de7213-167b-4a50-95c1-9438aa14878b-9ce1689d-8833-473b-8abb-80c097b9ad4f",
+		"48cd42ad-d55e-47ba-99cf-58f639eefe34": "generated-edge-simstep-3e97681c-6a2f-4ca9-8297-305d8e1cf528-48cd42ad-d55e-47ba-99cf-58f639eefe34",
+		"687405b4-61ec-459f-974a-8b2c9b2ddde7": "generated-edge-simstep-dd102807-3343-4323-86d7-d1501ef8509b-687405b4-61ec-459f-974a-8b2c9b2ddde7",
+		"9680018e-e991-4aae-b9ce-7a26792b8147": "generated-edge-simstep-145e4543-ec84-4165-ad43-a6ea6adbe618-9680018e-e991-4aae-b9ce-7a26792b8147"
+	}
+}
