@@ -27,13 +27,121 @@ const resolveEntryFilePath = (entry) => {
   if (!entry) {
     return "";
   }
+  if (typeof entry.path === "string" && entry.path) {
+    return entry.path;
+  }
   if (typeof entry.parentPath === "string" && entry.parentPath) {
     return entry.parentPath;
   }
-  if (typeof entry.path === "string") {
-    return entry.path;
-  }
   return "";
+};
+
+const normalizeRepoPath = (value) => {
+  if (!value) {
+    return "";
+  }
+  return String(value).replace(/^\/+|\/+$/g, "");
+};
+
+const resolveEntryType = (entry) => {
+  if (!entry) {
+    return "unknown";
+  }
+  if (entry.type === "tree" || entry.type === "blob") {
+    return entry.type;
+  }
+  if (Array.isArray(entry?.children) && entry.children.length > 0) {
+    return "tree";
+  }
+  if (
+    typeof entry?.startLine === "number" ||
+    typeof entry?.endLine === "number"
+  ) {
+    return "blob";
+  }
+  return "unknown";
+};
+
+const isPathPrefix = (folderPath, filePath) => {
+  if (!folderPath || !filePath) {
+    return false;
+  }
+  if (folderPath === filePath) {
+    return true;
+  }
+  return filePath.startsWith(`${folderPath}/`);
+};
+
+const buildCandidateFilePaths = (fileChange) => {
+  const candidates = [];
+  if (typeof fileChange?.filename === "string" && fileChange.filename) {
+    candidates.push(fileChange.filename);
+  }
+  if (
+    typeof fileChange?.previous_filename === "string" &&
+    fileChange.previous_filename
+  ) {
+    candidates.push(fileChange.previous_filename);
+  }
+  return candidates;
+};
+
+const findMatchedFile = ({ entry, filesChanged }) => {
+  const entryPath = normalizeRepoPath(resolveEntryFilePath(entry));
+  const entryType = resolveEntryType(entry);
+
+  if (!entryPath) {
+    console.log("DEBUG_CHECKRUN_MATCH_SKIPPED_EMPTY", {
+      cellId: entry?.cellId,
+      entryType,
+    });
+    return null;
+  }
+
+  let broadCandidate = null;
+
+  for (const file of filesChanged) {
+    const candidates = buildCandidateFilePaths(file).map(normalizeRepoPath);
+    for (const candidate of candidates) {
+      if (!candidate) {
+        continue;
+      }
+      const matchType =
+        entryType === "tree"
+          ? isPathPrefix(entryPath, candidate)
+          : candidate === entryPath;
+      if (matchType) {
+        console.log("DEBUG_CHECKRUN_MATCH_HIT", {
+          cellId: entry?.cellId,
+          entryType,
+          entryPath,
+          filePath: file.filename,
+          previousFilename: file.previous_filename,
+          matchType: entryType === "tree" ? "prefix" : "exact",
+        });
+        return file;
+      }
+      if (
+        !broadCandidate &&
+        (entryPath.includes(candidate) || candidate.includes(entryPath))
+      ) {
+        broadCandidate = file;
+      }
+    }
+  }
+
+  if (broadCandidate) {
+    console.log("DEBUG_CHECKRUN_MATCH_SKIPPED_BROAD", {
+      cellId: entry?.cellId,
+      entryType,
+      entryPath,
+      filePath: broadCandidate.filename,
+      previousFilename: broadCandidate.previous_filename,
+      reason: "substring_rejected",
+    });
+  }
+
+  return null;
 };
 
 const extractDiffHunks = (patch) => {
@@ -266,13 +374,7 @@ async function handlePullRequestChange() {
     if (!entry?.cellId) {
       continue;
     }
-    const entryFilePath = resolveEntryFilePath(entry);
-    const matchedFile = filesChanged.find(
-      (file) =>
-        entryFilePath === file.filename ||
-        entryFilePath.includes(file.filename) ||
-        file.filename.includes(entryFilePath)
-    );
+    const matchedFile = findMatchedFile({ entry, filesChanged });
 
     if (!matchedFile) {
       continue;
