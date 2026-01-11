@@ -23,9 +23,35 @@ const normalizeLineNumber = (value) => {
   return Number.isNaN(parsed) ? null : parsed;
 };
 
+const isSimStepPath = (value) => {
+  if (!value) {
+    return false;
+  }
+  return (
+    String(value).includes("-simstep-") ||
+    String(value).startsWith("generated-simstep-") ||
+    String(value).startsWith("generated-edge-simstep-")
+  );
+};
+
 const resolveEntryFilePath = (entry) => {
   if (!entry) {
     return "";
+  }
+  if (
+    typeof entry.parentPath === "string" &&
+    entry.parentPath &&
+    typeof entry.path === "string" &&
+    entry.path &&
+    isSimStepPath(entry.path)
+  ) {
+    console.log("DEBUG_CHECKRUN_MATCH_PARENT_PATH", {
+      cellId: entry?.cellId,
+      entryPath: entry.path,
+      parentPath: entry.parentPath,
+      reason: "simstep-entry",
+    });
+    return entry.parentPath;
   }
   if (typeof entry.path === "string" && entry.path) {
     return entry.path;
@@ -399,6 +425,25 @@ async function handlePullRequestChange() {
     const filePath = resolveEntryFilePath(entry) || fileChange.filename;
     const rawStartLine = normalizeLineNumber(entry?.startLine);
     const rawEndLine = normalizeLineNumber(entry?.endLine);
+    const hasChildren =
+      Array.isArray(entry?.children) && entry.children.length > 0;
+    const isContainerWithoutLines =
+      hasChildren && rawStartLine === null && rawEndLine === null;
+
+    if (
+      isContainerWithoutLines &&
+      fileChange.status !== "removed" &&
+      fileChange.status !== "renamed"
+    ) {
+      console.log("DEBUG_CHECKRUN_LINE_SHIFT_SKIPPED", {
+        cellId: entry.cellId,
+        path: entry.path,
+        filePath,
+        status: fileChange.status,
+        reason: "container-no-lines",
+      });
+      continue;
+    }
 
     if (fileChange.status === "removed") {
       feedback.files.push({
