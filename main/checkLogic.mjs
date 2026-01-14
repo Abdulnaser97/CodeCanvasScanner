@@ -23,6 +23,56 @@ const normalizeLineNumber = (value) => {
   return Number.isNaN(parsed) ? null : parsed;
 };
 
+const UNKNOWN_RANGE = "UNKNOWN";
+const REGEN_REQUIRED_RANGE = "SIM_REGEN_REQ";
+const MAX_REASON_SNIPPET_LENGTH = 120;
+
+const formatRange = (startLine, endLine) => {
+  const normalizedStart = normalizeLineNumber(startLine);
+  const normalizedEnd = normalizeLineNumber(endLine);
+  if (normalizedStart === null || normalizedEnd === null) {
+    return UNKNOWN_RANGE;
+  }
+  const start = Math.min(normalizedStart, normalizedEnd);
+  const end = Math.max(normalizedStart, normalizedEnd);
+  return `L${start}-${end}`;
+};
+
+const truncatePatchContent = (value, maxLength = MAX_REASON_SNIPPET_LENGTH) => {
+  if (!value) {
+    return "";
+  }
+  const trimmed = String(value).trim();
+  if (trimmed.length <= maxLength) {
+    return trimmed;
+  }
+  return `${trimmed.slice(0, maxLength)}...`;
+};
+
+const resolveSimulationName = (entry, simulations) => {
+  if (!entry?.simSteps || !Array.isArray(entry.simSteps)) {
+    return null;
+  }
+  const names = [];
+  for (const step of entry.simSteps) {
+    const key = typeof step?.simulationKey === "string" ? step.simulationKey : "";
+    if (!key) {
+      continue;
+    }
+    const simName =
+      typeof simulations?.[key]?.name === "string" && simulations[key].name
+        ? simulations[key].name
+        : key;
+    if (!names.includes(simName)) {
+      names.push(simName);
+    }
+  }
+  if (names.length === 0) {
+    return null;
+  }
+  return names.join(", ");
+};
+
 const isSimStepPath = (value) => {
   if (!value) {
     return false;
@@ -187,6 +237,111 @@ const extractDiffHunks = (patch) => {
   return hunks;
 };
 
+const extractPatchLines = (patch) => {
+  if (!patch) {
+    return [];
+  }
+  const lines = patch.split("\n");
+  const diffLines = [];
+  let oldLine = 0;
+  let newLine = 0;
+  let hunkIndex = -1;
+
+  for (const line of lines) {
+    if (line.startsWith("@@")) {
+      const match = /@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@/.exec(line);
+      if (match) {
+        oldLine = Number.parseInt(match[1], 10);
+        newLine = Number.parseInt(match[3], 10);
+        hunkIndex += 1;
+      }
+      continue;
+    }
+
+    if (hunkIndex < 0) {
+      continue;
+    }
+
+    if (line.startsWith("+++ ") || line.startsWith("--- ")) {
+      continue;
+    }
+
+    if (line.startsWith("\\ No newline")) {
+      continue;
+    }
+
+    const prefix = line[0];
+    const content = line.slice(1);
+
+    if (prefix === "+") {
+      diffLines.push({ type: "add", oldLine, newLine, content, hunkIndex });
+      newLine += 1;
+      continue;
+    }
+
+    if (prefix === "-") {
+      diffLines.push({ type: "del", oldLine, newLine, content, hunkIndex });
+      oldLine += 1;
+      continue;
+    }
+
+    if (prefix === " ") {
+      oldLine += 1;
+      newLine += 1;
+    }
+  }
+
+  return diffLines;
+};
+
+const findOverlapDetail = ({ startLine, endLine, hunks, patchLines }) => {
+  if (!Array.isArray(hunks) || hunks.length === 0) {
+    return null;
+  }
+
+  for (let hunkIndex = 0; hunkIndex < hunks.length; hunkIndex += 1) {
+    const hunk = hunks[hunkIndex];
+    const oldEnd = hunk.oldStart + Math.max(hunk.oldLines, 1) - 1;
+
+    if (endLine < hunk.oldStart) {
+      break;
+    }
+
+    if (startLine > oldEnd) {
+      continue;
+    }
+
+    const overlapStart = Math.max(startLine, hunk.oldStart);
+    const overlapEnd = Math.min(endLine, oldEnd);
+    const linesForHunk = patchLines.filter(
+      (line) => line.hunkIndex === hunkIndex
+    );
+    const addedLine = linesForHunk.find(
+      (line) =>
+        line.type === "add" &&
+        line.oldLine >= overlapStart &&
+        line.oldLine <= overlapEnd
+    );
+    if (addedLine) {
+      return { line: addedLine, overlapStart, overlapEnd };
+    }
+
+    const removedLine = linesForHunk.find(
+      (line) =>
+        line.type === "del" &&
+        line.oldLine >= overlapStart &&
+        line.oldLine <= overlapEnd
+    );
+    if (removedLine) {
+      return { line: removedLine, overlapStart, overlapEnd };
+    }
+
+    return { line: null, overlapStart, overlapEnd };
+  }
+
+  return null;
+};
+
 const classifyLineShift = (startLine, endLine, hunks) => {
   let offset = 0;
 
@@ -216,6 +371,124 @@ const classifyLineShift = (startLine, endLine, hunks) => {
     startLine: startLine + offset,
     endLine: endLine + offset,
   };
+};
+
+const buildLineShiftReasonDetail = ({
+  reason,
+  beforeRange,
+  afterRange,
+  delta,
+  geminiReason,
+}) => {
+  if (reason === "gemini-lineshift") {
+    if (geminiReason) {
+      return `Gemini validated linkage update: ${geminiReason}`;
+    }
+    return `Gemini validated linkage update to ${afterRange}.`;
+  }
+
+  if (delta === 0) {
+    return `Diff hunks do not overlap linked range ${beforeRange}; range unchanged (${afterRange}).`;
+  }
+
+  const shiftLabel = delta > 0 ? `+${delta}` : `${delta}`;
+  return `Diff hunks do not overlap linked range ${beforeRange}; shifted by ${shiftLabel} lines to ${afterRange}.`;
+};
+
+const buildRegenerateReasonDetail = ({
+  reason,
+  entry,
+  fileChange,
+  beforeRange,
+  startLine,
+  endLine,
+  hunks,
+  patchLines,
+  geminiReason,
+}) => {
+  const cellTitle = entry?.cellName || entry?.cellId || "Unknown cell";
+  const filePath = fileChange?.filename || entry?.path || "unknown path";
+
+  if (reason === "file-removed") {
+    return `File "${filePath}" was removed in this PR, so the linked range ${beforeRange} for "${cellTitle}" cannot be auto-updated.`;
+  }
+
+  if (reason === "file-renamed") {
+    const previousPath =
+      fileChange?.previous_filename || entry?.path || "unknown path";
+    return `File was renamed from "${previousPath}" to "${filePath}", so the linked range ${beforeRange} for "${cellTitle}" needs regeneration to confirm the new linkage.`;
+  }
+
+  if (reason === "missing-line-range") {
+    return `Cell "${cellTitle}" has no stored line range, so auto-linkage updates cannot be computed.`;
+  }
+
+  if (reason === "missing-diff") {
+    return `GitHub did not provide a diff patch for "${filePath}", so the linked range ${beforeRange} for "${cellTitle}" cannot be validated automatically.`;
+  }
+
+  if (reason === "gemini-regenerate") {
+    if (geminiReason) {
+      return `Gemini flagged ambiguity within linked range ${beforeRange} for "${cellTitle}": ${geminiReason}`;
+    }
+    return `Gemini flagged ambiguity within linked range ${beforeRange} for "${cellTitle}", so regeneration is required.`;
+  }
+
+  if (reason === "diff-overlap") {
+    if (
+      startLine === null ||
+      endLine === null ||
+      !Array.isArray(hunks) ||
+      hunks.length === 0
+    ) {
+      return `Diff overlaps linked range ${beforeRange} for "${cellTitle}", so auto-linkage cannot safely determine the updated boundaries.`;
+    }
+
+    const overlapDetail = findOverlapDetail({
+      startLine,
+      endLine,
+      hunks,
+      patchLines,
+    });
+
+    if (overlapDetail?.line) {
+      const lineNumber =
+        overlapDetail.line.type === "add"
+          ? overlapDetail.line.newLine
+          : overlapDetail.line.oldLine;
+      const lineAction =
+        overlapDetail.line.type === "add" ? "added" : "removed";
+      const snippet = truncatePatchContent(overlapDetail.line.content);
+      const snippetLabel = snippet ? ` "${snippet}"` : "";
+      return `A line was ${lineAction}${snippetLabel} at L${lineNumber} inside linked range ${beforeRange} for "${cellTitle}", so auto-linkage cannot decide if the change belongs to the cell.`;
+    }
+
+    return `Diff overlaps linked range ${beforeRange} for "${cellTitle}", so auto-linkage cannot safely determine the updated boundaries.`;
+  }
+
+  return `Auto-linkage could not safely update linked range ${beforeRange} for "${cellTitle}".`;
+};
+
+const formatSummaryEntry = (entry, includeReasonDetail = false) => {
+  const title = entry?.cellTitle || entry?.cellName;
+  const parts = [`**Cell ID:** ${entry.cellId}`];
+  if (title) {
+    parts.push(`**Cell Title:** ${title}`);
+  }
+  if (entry?.simulationName) {
+    parts.push(`**Simulation:** ${entry.simulationName}`);
+  }
+  if (entry?.beforeRange) {
+    parts.push(`**Before:** ${entry.beforeRange}`);
+  }
+  if (entry?.afterRange) {
+    parts.push(`**After:** ${entry.afterRange}`);
+  }
+  let line = parts.join(" | ");
+  if (includeReasonDetail && entry?.reasonDetail) {
+    line += `\n> ${entry.reasonDetail}`;
+  }
+  return line;
 };
 
 const extractJsonPayload = (text) => {
@@ -425,6 +698,19 @@ async function handlePullRequestChange() {
     const filePath = resolveEntryFilePath(entry) || fileChange.filename;
     const rawStartLine = normalizeLineNumber(entry?.startLine);
     const rawEndLine = normalizeLineNumber(entry?.endLine);
+    const beforeStartLine = rawStartLine;
+    const beforeEndLine = rawEndLine;
+    const beforeRange = formatRange(beforeStartLine, beforeEndLine);
+    const simulationName = resolveSimulationName(
+      entry,
+      codeCanvasJson.simulations
+    );
+    console.log("DEBUG_CHECKRUN_PLAN_STEP1_CONTEXT_READY", {
+      cellId: entry.cellId,
+      simulationName,
+      beforeRange,
+      filePath,
+    });
     const hasChildren =
       Array.isArray(entry?.children) && entry.children.length > 0;
     const isContainerWithoutLines =
@@ -445,53 +731,150 @@ async function handlePullRequestChange() {
       continue;
     }
 
-    if (fileChange.status === "removed") {
+    if (fileChange.status === "removed" || fileChange.status === "renamed") {
+      const reason =
+        fileChange.status === "removed" ? "file-removed" : "file-renamed";
+      const reasonDetail = buildRegenerateReasonDetail({
+        reason,
+        entry,
+        fileChange,
+        beforeRange,
+        startLine: beforeStartLine,
+        endLine: beforeEndLine,
+        hunks: [],
+        patchLines: [],
+        geminiReason: null,
+      });
       feedback.files.push({
         path: entry.path,
         cellId: entry.cellId,
         cellName: entry?.cellName,
-        reason: "file-removed",
+        cellTitle: entry?.cellName,
+        simulationName,
+        filePath,
+        beforeRange,
+        beforeStartLine,
+        beforeEndLine,
+        afterRange: REGEN_REQUIRED_RANGE,
+        reason,
+        reasonDetail,
+      });
+      console.log("DEBUG_CHECKRUN_REASON_DETAIL_BUILT", {
+        cellId: entry.cellId,
+        reason,
+        beforeRange,
+        reasonDetail,
+      });
+      console.log("DEBUG_CHECKRUN_PLAN_STEP2_REASON_READY", {
+        cellId: entry.cellId,
+        reason,
+        beforeRange,
+        afterRange: REGEN_REQUIRED_RANGE,
       });
       console.log("DEBUG_CHECKRUN_LINE_SHIFT_ENTRY", {
         cellId: entry.cellId,
         path: entry.path,
         filePath,
         action: "regenerate",
-        reason: "file-removed",
+        reason,
       });
       continue;
     }
 
     if (rawStartLine === null || rawEndLine === null) {
+      const reason = "missing-line-range";
+      const reasonDetail = buildRegenerateReasonDetail({
+        reason,
+        entry,
+        fileChange,
+        beforeRange,
+        startLine: beforeStartLine,
+        endLine: beforeEndLine,
+        hunks: [],
+        patchLines: [],
+        geminiReason: null,
+      });
       feedback.files.push({
         path: entry.path,
         cellId: entry.cellId,
         cellName: entry?.cellName,
-        reason: "missing-line-range",
+        cellTitle: entry?.cellName,
+        simulationName,
+        filePath,
+        beforeRange,
+        beforeStartLine,
+        beforeEndLine,
+        afterRange: REGEN_REQUIRED_RANGE,
+        reason,
+        reasonDetail,
+      });
+      console.log("DEBUG_CHECKRUN_REASON_DETAIL_BUILT", {
+        cellId: entry.cellId,
+        reason,
+        beforeRange,
+        reasonDetail,
+      });
+      console.log("DEBUG_CHECKRUN_PLAN_STEP2_REASON_READY", {
+        cellId: entry.cellId,
+        reason,
+        beforeRange,
+        afterRange: REGEN_REQUIRED_RANGE,
       });
       console.log("DEBUG_CHECKRUN_LINE_SHIFT_ENTRY", {
         cellId: entry.cellId,
         path: entry.path,
         filePath,
         action: "regenerate",
-        reason: "missing-line-range",
+        reason,
       });
       continue;
     }
 
     if (!fileChange.patch) {
+      const reason = "missing-diff";
+      const reasonDetail = buildRegenerateReasonDetail({
+        reason,
+        entry,
+        fileChange,
+        beforeRange,
+        startLine: beforeStartLine,
+        endLine: beforeEndLine,
+        hunks: [],
+        patchLines: [],
+        geminiReason: null,
+      });
       feedback.files.push({
         path: entry.path,
         cellId: entry.cellId,
         cellName: entry?.cellName,
-        reason: "missing-diff",
+        cellTitle: entry?.cellName,
+        simulationName,
+        filePath,
+        beforeRange,
+        beforeStartLine,
+        beforeEndLine,
+        afterRange: REGEN_REQUIRED_RANGE,
+        reason,
+        reasonDetail,
+      });
+      console.log("DEBUG_CHECKRUN_REASON_DETAIL_BUILT", {
+        cellId: entry.cellId,
+        reason,
+        beforeRange,
+        reasonDetail,
+      });
+      console.log("DEBUG_CHECKRUN_PLAN_STEP2_REASON_READY", {
+        cellId: entry.cellId,
+        reason,
+        beforeRange,
+        afterRange: REGEN_REQUIRED_RANGE,
       });
       console.log("DEBUG_CHECKRUN_LINE_SHIFT_ENTRY", {
         cellId: entry.cellId,
         path: entry.path,
         filePath,
         action: "regenerate",
-        reason: "missing-diff",
+        reason,
       });
       continue;
     }
@@ -499,10 +882,12 @@ async function handlePullRequestChange() {
     const startLine = Math.min(rawStartLine, rawEndLine);
     const endLine = Math.max(rawStartLine, rawEndLine);
     const hunks = extractDiffHunks(fileChange.patch);
+    const patchLines = extractPatchLines(fileChange.patch);
     let classification = classifyLineShift(startLine, endLine, hunks);
+    let geminiReasonDetail = null;
 
     if (classification.action === "lineShift") {
-      const proposedRange = {
+      let proposedRange = {
         startLine: Math.max(1, classification.startLine),
         endLine: Math.max(1, classification.endLine),
       };
@@ -516,9 +901,10 @@ async function handlePullRequestChange() {
       });
 
       if (geminiResult?.action === "regenerate") {
+        geminiReasonDetail = geminiResult.reason || null;
         classification = {
           action: "regenerate",
-          reason: geminiResult.reason || "gemini-regenerate",
+          reason: "gemini-regenerate",
         };
       } else if (geminiResult?.action === "lineShift") {
         const geminiStart = normalizeLineNumber(geminiResult.startLine);
@@ -526,23 +912,59 @@ async function handlePullRequestChange() {
         if (geminiStart !== null && geminiEnd !== null) {
           classification = {
             action: "lineShift",
-            reason: geminiResult.reason || "gemini-lineshift",
+            reason: "gemini-lineshift",
             startLine: Math.min(geminiStart, geminiEnd),
             endLine: Math.max(geminiStart, geminiEnd),
             delta: classification.delta,
+          };
+          geminiReasonDetail = geminiResult.reason || null;
+          proposedRange = {
+            startLine: Math.max(1, classification.startLine),
+            endLine: Math.max(1, classification.endLine),
           };
         }
       }
 
       if (classification.action === "lineShift") {
+        const afterRange = formatRange(
+          proposedRange.startLine,
+          proposedRange.endLine
+        );
+        const reasonDetail = buildLineShiftReasonDetail({
+          reason: classification.reason,
+          beforeRange,
+          afterRange,
+          delta: classification.delta,
+          geminiReason: geminiReasonDetail,
+        });
         feedback.lineUpdates.push({
           path: entry.path,
           cellId: entry.cellId,
           cellName: entry?.cellName,
+          cellTitle: entry?.cellName,
+          simulationName,
           filePath,
+          beforeRange,
+          beforeStartLine: startLine,
+          beforeEndLine: endLine,
+          afterRange,
           startLine: proposedRange.startLine,
           endLine: proposedRange.endLine,
           reason: classification.reason,
+          reasonDetail,
+        });
+        console.log("DEBUG_CHECKRUN_REASON_DETAIL_BUILT", {
+          cellId: entry.cellId,
+          reason: classification.reason,
+          beforeRange,
+          afterRange,
+          reasonDetail,
+        });
+        console.log("DEBUG_CHECKRUN_PLAN_STEP2_REASON_READY", {
+          cellId: entry.cellId,
+          reason: classification.reason,
+          beforeRange,
+          afterRange,
         });
         console.log("DEBUG_CHECKRUN_LINE_SHIFT_ENTRY", {
           cellId: entry.cellId,
@@ -558,18 +980,50 @@ async function handlePullRequestChange() {
       }
     }
 
+    const regenReason = classification.reason || "diff-overlap";
+    const regenReasonDetail = buildRegenerateReasonDetail({
+      reason: regenReason,
+      entry,
+      fileChange,
+      beforeRange,
+      startLine,
+      endLine,
+      hunks,
+      patchLines,
+      geminiReason: geminiReasonDetail,
+    });
     feedback.files.push({
       path: entry.path,
       cellId: entry.cellId,
       cellName: entry?.cellName,
-      reason: classification.reason || "diff-overlap",
+      cellTitle: entry?.cellName,
+      simulationName,
+      filePath,
+      beforeRange,
+      beforeStartLine: startLine,
+      beforeEndLine: endLine,
+      afterRange: REGEN_REQUIRED_RANGE,
+      reason: regenReason,
+      reasonDetail: regenReasonDetail,
+    });
+    console.log("DEBUG_CHECKRUN_REASON_DETAIL_BUILT", {
+      cellId: entry.cellId,
+      reason: regenReason,
+      beforeRange,
+      reasonDetail: regenReasonDetail,
+    });
+    console.log("DEBUG_CHECKRUN_PLAN_STEP2_REASON_READY", {
+      cellId: entry.cellId,
+      reason: regenReason,
+      beforeRange,
+      afterRange: REGEN_REQUIRED_RANGE,
     });
     console.log("DEBUG_CHECKRUN_LINE_SHIFT_ENTRY", {
       cellId: entry.cellId,
       path: entry.path,
       filePath,
       action: "regenerate",
-      reason: classification.reason || "diff-overlap",
+      reason: regenReason,
     });
   }
 
@@ -591,10 +1045,7 @@ async function handlePullRequestChange() {
     summary +=
       "### Linkage line updates applied\n" +
       feedback.lineUpdates
-        .map(
-          (update) =>
-            `**Cell ID:** ${update.cellId} → L${update.startLine}-${update.endLine}`
-        )
+        .map((update) => formatSummaryEntry(update))
         .join("\n") +
       "\n\n";
   }
@@ -603,13 +1054,25 @@ async function handlePullRequestChange() {
     summary +=
       "### The following CodeCanvas diagram nodes might be impacted by the PR:\n";
     for (const issue of feedback.files) {
-      summary += `**Cell ID:** ${issue.cellId} ${
-        issue?.cellName ? `, **cell Title:** ${issue?.cellName}` : ``
-      }\n`;
+      summary += `${formatSummaryEntry(issue, true)}\n`;
     }
   } else if (feedback.lineUpdates.length === 0) {
     summary += "CodeCanvas Diagram is not impacted by this PR.";
   }
+
+  console.log("DEBUG_CHECKRUN_OUTPUT_ENRICHED", {
+    lineUpdates: feedback.lineUpdates.length,
+    regenCount: feedback.files.length,
+    lineUpdatesWithDetails: feedback.lineUpdates.filter(
+      (update) => update.reasonDetail
+    ).length,
+    regenWithDetails: feedback.files.filter((issue) => issue.reasonDetail)
+      .length,
+  });
+  console.log("DEBUG_CHECKRUN_PLAN_STEP3_SUMMARY_READY", {
+    lineUpdates: feedback.lineUpdates.length,
+    regenCount: feedback.files.length,
+  });
 
   console.log("title: ", title);
   console.log("summary: ", summary);
