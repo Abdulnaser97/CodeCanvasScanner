@@ -1101,6 +1101,26 @@ async function handlePullRequestChange() {
   // Update the summary with the new URL
   summary += `\n\n ## [Click Here to Update Diagram](${codeCanvasURL})`;
 
+  const stepSummaryPath = process.env.GITHUB_STEP_SUMMARY;
+  if (stepSummaryPath) {
+    try {
+      const stepSummary = [
+        "## CodeCanvas Scanner",
+        "",
+        `**Result:** ${title}`,
+        `**Conclusion:** ${conclusion}`,
+        "",
+        summary,
+        "",
+      ].join("\n");
+      await fs.promises.appendFile(stepSummaryPath, stepSummary, "utf8");
+    } catch (error) {
+      console.log("DEBUG_STEP_SUMMARY_WRITE_FAILED", {
+        error: error?.message || String(error),
+      });
+    }
+  }
+
   // Step 4: Update the check run with its final status and details
   await octokit.rest.checks.update({
     owner,
