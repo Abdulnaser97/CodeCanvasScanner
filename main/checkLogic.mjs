@@ -1029,11 +1029,35 @@ async function handlePullRequestChange() {
 
   const action_required = feedback.files.length > 0;
   const conclusion = action_required ? "action_required" : "success";
+  const changedLineUpdates = [];
+  const unchangedLineUpdates = [];
+  for (const update of feedback.lineUpdates) {
+    const beforeStart = normalizeLineNumber(update?.beforeStartLine);
+    const beforeEnd = normalizeLineNumber(update?.beforeEndLine);
+    const afterStart = normalizeLineNumber(update?.startLine);
+    const afterEnd = normalizeLineNumber(update?.endLine);
+    const hasLineChange =
+      beforeStart !== null &&
+      beforeEnd !== null &&
+      afterStart !== null &&
+      afterEnd !== null
+        ? beforeStart !== afterStart || beforeEnd !== afterEnd
+        : update?.beforeRange && update?.afterRange
+          ? update.beforeRange !== update.afterRange
+          : false;
+    if (hasLineChange) {
+      changedLineUpdates.push(update);
+    } else {
+      unchangedLineUpdates.push(update);
+    }
+  }
   let title = "No issues found";
   if (action_required) {
     title = `${feedback.files.length} simulations need regeneration`;
-  } else if (feedback.lineUpdates.length > 0) {
-    title = `${feedback.lineUpdates.length} linkages updated`;
+  } else if (changedLineUpdates.length > 0) {
+    title = `${changedLineUpdates.length} linkages updated`;
+  } else if (unchangedLineUpdates.length > 0) {
+    title = `${unchangedLineUpdates.length} linkages unchanged`;
   }
 
   let summary = "";
@@ -1041,10 +1065,17 @@ async function handlePullRequestChange() {
   const sourceBranch = eventPayload.pull_request.head.ref;
   let codeCanvasURL = `https://dev.code-canvas.com/?session=github&repo=${repo}&owner=${owner}&branch=${sourceBranch}&sha=${sha}`;
 
-  if (feedback.lineUpdates.length > 0) {
+  if (changedLineUpdates.length > 0) {
     summary +=
       "### Linkage line updates applied\n" +
-      feedback.lineUpdates
+      changedLineUpdates.map((update) => formatSummaryEntry(update)).join("\n") +
+      "\n\n";
+  }
+
+  if (unchangedLineUpdates.length > 0) {
+    summary +=
+      "### Linkage unchanged\n" +
+      unchangedLineUpdates
         .map((update) => formatSummaryEntry(update))
         .join("\n") +
       "\n\n";
@@ -1056,7 +1087,10 @@ async function handlePullRequestChange() {
     for (const issue of feedback.files) {
       summary += `${formatSummaryEntry(issue, true)}\n`;
     }
-  } else if (feedback.lineUpdates.length === 0) {
+  } else if (
+    changedLineUpdates.length === 0 &&
+    unchangedLineUpdates.length === 0
+  ) {
     summary += "CodeCanvas Diagram is not impacted by this PR.";
   }
 

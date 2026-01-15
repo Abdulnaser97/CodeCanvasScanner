@@ -1002,14 +1002,14 @@
 					"simStepId": "e1dd89e4-92bf-4c8c-bea9-4f8d6b69b2aa",
 					"diagramNodeId": "e3480b7c-44f7-4f95-a3b0-647481a47fd9",
 					"simStepLabel": "Workflow Job Execution",
-					"simStepDescription": "The GitHub Actions runner picks up the job, installs dependencies, and executes the Node.js script `checkLogic.js`. It passes critical context like the GitHub Token and Event Path as environment variables.",
+					"simStepDescription": "The GitHub Actions runner picks up the job, installs dependencies, and executes the Node.js script `checkLogic.mjs`. It passes critical context like the GitHub Token and Event Path as environment variables.",
 					"isEdge": 1,
 					"sourceCodeMapping": {
 						"filePath": ".github/workflows/codecanvas.yml",
 						"startLine": "22",
 						"endLine": "28",
 						"relevantVariables": [
-							"checkLogic.js",
+							"checkLogic.mjs",
 							"GITHUB_TOKEN",
 							"GITHUB_EVENT_PATH"
 						]
