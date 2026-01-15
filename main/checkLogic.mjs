@@ -1085,7 +1085,7 @@ async function handlePullRequestChange() {
     summary +=
       "### The following CodeCanvas diagram nodes might be impacted by the PR:\n";
     for (const issue of feedback.files) {
-      summary += `${formatSummaryEntry(issue, true)}\n`;
+      summary += `${formatSummaryEntry(issue, true)}\n\n`;
     }
   } else if (
     changedLineUpdates.length === 0 &&
