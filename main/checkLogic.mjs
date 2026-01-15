@@ -1135,6 +1135,11 @@ async function handlePullRequestChange() {
       text: JSON.stringify(feedback),
     },
   });
+
+  if (action_required) {
+    console.error("CodeCanvas Scanner requires action; failing job.");
+    process.exitCode = 1;
+  }
 }
 
 handlePullRequestChange().catch((err) => console.error(err));
